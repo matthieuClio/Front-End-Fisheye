@@ -25,7 +25,7 @@ async function getPhotographers() {
     const apiInternal = await response.json(); // response contain photographers and media object
     const photographers = apiInternal.photographers; // apiInternal.photographers reference to photographers object
     console.log(apiInternal);
-
+    
     // et bien retourner le tableau photographers seulement une fois récupéré
     // return ({ photographers: [...photographers] })
     return ({ photographers })
@@ -51,6 +51,8 @@ async function displayData(photographers) {
 async function init() {
     // Récupère les datas des photographes
     const { photographers } = await getPhotographers();
+
+    // Show photographers datas
     displayData(photographers);
 };
 
