@@ -21,7 +21,7 @@ async function getPhotographers() {
     //         "portrait": "account.png"
     //     },
     // ]
-    const response = await fetch('data/photographers.json');
+    const response = await fetch('./data/photographers.json');
     const apiInternal = await response.json(); // response contain photographers and media object
     const photographers = apiInternal.photographers; // apiInternal.photographers reference to photographers object
     console.log(apiInternal);
@@ -37,7 +37,14 @@ async function displayData(photographers) {
     photographers.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);
         const userCardDOM = photographerModel.getUserCardDOM();
+
+        userCardDOM.setAttribute("id", photographer.id);
         photographersSection.appendChild(userCardDOM);
+
+        userCardDOM.addEventListener("click", () => {
+            window.location = `photographer.html?${photographer.id}`;
+            console.log(photographer.id);
+        });
     });
 };
 
