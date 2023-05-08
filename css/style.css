@@ -68,9 +68,12 @@ h1 {
   width: 100%;
 }
 .photograph-header__photograph-info__name {
+  margin: 0;
+  padding: 0;
   display: block;
   color: #D3573C;
   font-size: 40px;
+  font-weight: normal;
 }
 .photograph-header__photograph-info__city {
   display: block;
