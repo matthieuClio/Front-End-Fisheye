@@ -22,5 +22,5 @@ function photographerFactory(data) {
 
         return (article);
     }
-    return { id, name, portrait, city, country, tagline, price, picture, getUserCardDOM }
+    return { getUserCardDOM }
 }
