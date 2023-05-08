@@ -126,10 +126,10 @@ h1 {
   border: 2px solid black;
 }
 .order-by__ul {
-  padding: 10px;
+  padding: 8px;
   margin: 0;
   margin-left: 10px;
-  font-size: 15px;
+  font-size: 13px;
   color: white;
   width: auto;
   border: none;
@@ -143,6 +143,10 @@ h1 {
 }
 .order-by__ul__li__popularity {
   border-bottom: 1px solid white;
+}
+.order-by__ul__li__popularity__icon {
+  font-size: 13px;
+  margin-left: 10px;
 }
 .order-by__ul__li__date {
   border-bottom: 1px solid white;
