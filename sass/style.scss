@@ -1,14 +1,15 @@
 // Base
 
 // Utils
+@import "./utils/utils";
 
 // Layout
-@import "./layout/layout.scss";
+@import "./layout/layout";
 // Component
 
 // Pages : index and photographer
-@import "./pages/index.scss";
-@import "./pages/photographer.scss";
+@import "./pages/index";
+@import "./pages/photographer";
 
 // Themes
 

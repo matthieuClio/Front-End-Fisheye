@@ -6,6 +6,10 @@
   font-weight: bold;
 }
 
+.margin-right-and-left {
+  margin: 0 100px;
+}
+
 body {
   font-family: "DM Sans", sans-serif;
   margin: 0;
@@ -57,7 +61,6 @@ h1 {
 .photograph-header {
   background-color: #FAFAFA;
   height: 300px;
-  margin: 0 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,7 +128,6 @@ h1 {
 
 .order-by {
   display: flex;
-  margin: 0 100px;
   border: 2px solid black;
 }
 .order-by__ul {
@@ -153,6 +155,40 @@ h1 {
 }
 .order-by__ul__li__date {
   border-bottom: 1px solid white;
+}
+
+.lightbox-container {
+  background-color: orange;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.lightbox-container__figure {
+  border: 2px solid blue;
+  display: flex;
+  margin: 0;
+  margin-bottom: 20px;
+  width: 30%;
+  height: 350px;
+  overflow: hidden;
+  flex-direction: column;
+}
+.lightbox-container__figure__image {
+  border: 2px solid green;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+.lightbox-container__figure__figcaption {
+  border: 2px solid purple;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  color: #901C1C;
+}
+.lightbox-container__figure__figcaption__icon {
+  margin-left: 4px;
 }
 
 #contact_modal {
