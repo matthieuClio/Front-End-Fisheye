@@ -203,6 +203,20 @@ h1 {
   margin-left: 4px;
 }
 
+.tarification {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  right: 40px;
+  padding: 15px 20px 15px 20px;
+  width: 210px;
+  font-weight: bold;
+  background-color: #DB8876;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
 /* Lightbox modal */
 .lightbox-background {
   z-index: 2;
