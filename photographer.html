@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -43,7 +43,7 @@
       </div>
 
       <!-- Order by -->
-      <div class="order-by margin-right-and-left">
+      <div class="order-by margin-right-and-left margin-bottom-text">
         <label class="font-weight-bold">
           Trier par :
         </label>
@@ -51,7 +51,6 @@
         <ul class="order-by__ul">
           <li class="order-by__ul__li order-by__ul__li__popularity">
             Popularité
-            <!-- Chevron icon -->
             <i class="fa-solid fa-chevron-up order-by__ul__li__popularity__icon"></i>
           </li>
           <li class="order-by__ul__li order-by__ul__li__date">
@@ -63,57 +62,71 @@
         </ul>
       </div>
 
-      <!-- Lightbox -->
-      <!-- TO FINISH-->
-      <div class="lightbox-container margin-right-and-left"> <!-- Container -->
-        <figure class="lightbox-container__figure">
-          <img src="./assets/Photos/Mimi/Animals_Rainbow.jpg" alt="" class="lightbox-container__figure__image">
-          <figcaption class="lightbox-container__figure__figcaption">
+      <!-- Media -->
+      <div class="media-container margin-right-and-left">
+        <figure class="media-container__figure">
+          <img src="./assets/Photos/Mimi/Animals_Rainbow.jpg" alt="" class="media-container__figure__image">
+          <figcaption class="media-container__figure__figcaption">
             Arc-en-ciel
             <span>
-              10<i class="fa-solid fa-heart lightbox-container__figure__figcaption__icon"></i>
+              10<i class="fa-solid fa-heart media-container__figure__figcaption__icon"></i>
             </span>
           </figcaption>
         </figure>
 
-        <figure class="lightbox-container__figure">
-          <img src="./assets/Photos/Mimi/Travel_Lonesome.jpg" alt="" class="lightbox-container__figure__image">
-          <figcaption class="lightbox-container__figure__figcaption">
+        <figure class="media-container__figure">
+          <img src="./assets/Photos/Mimi/Travel_Lonesome.jpg" alt="" class="media-container__figure__image">
+          <figcaption class="media-container__figure__figcaption">
             Solitude
             <span>
-              10<i class="fa-solid fa-heart lightbox-container__figure__figcaption__icon"></i>
+              10<i class="fa-solid fa-heart media-container__figure__figcaption__icon"></i>
             </span>
           </figcaption>
         </figure>
 
-        <figure class="lightbox-container__figure">
-          <img src="./assets/Photos/Mimi/Event_BenevidesWedding.jpg" alt="" class="lightbox-container__figure__image">
-          <figcaption class="lightbox-container__figure__figcaption">
+        <figure class="media-container__figure">
+          <img src="./assets/Photos/Mimi/Event_BenevidesWedding.jpg" alt="" class="media-container__figure__image">
+          <figcaption class="media-container__figure__figcaption">
             Solitude
             <span>
-              10<i class="fa-solid fa-heart lightbox-container__figure__figcaption__icon"></i>
+              10<i class="fa-solid fa-heart media-container__figure__figcaption__icon"></i>
             </span>
           </figcaption>
         </figure>
 
-        <figure class="lightbox-container__figure">
-          <img src="./assets/Photos/Mimi/Event_BenevidesWedding.jpg" alt="" class="lightbox-container__figure__image">
-          <figcaption class="lightbox-container__figure__figcaption">
+        <figure class="media-container__figure">
+          <img src="./assets/Photos/Mimi/Event_BenevidesWedding.jpg" alt="" class="media-container__figure__image">
+          <figcaption class="media-container__figure__figcaption">
             Solitude
             <span>
-              10<i class="fa-solid fa-heart lightbox-container__figure__figcaption__icon"></i>
+              10<i class="fa-solid fa-heart media-container__figure__figcaption__icon"></i>
             </span>
           </figcaption>
         </figure>
       </div>
     </main>
+
+    <!-- Lightbox modal -->
+    <div class="lightbox-background">
+      <div class="lightbox-background__container">
+        <i class="fa-solid fa-chevron-left lightbox-background__container__icon-left cursor-pointer"></i>
+        <figure class="lightbox-background__container__figure">
+          <img src="assets/Photos/Mimi/Animals_Rainbow.jpg" alt="" class="lightbox-background__container__figure__image">
+          <figcaption class="lightbox-background__container__figure__caption">Arc-en-ciel</figcaption>
+        </figure>
+        <div class="lightbox-background__container__icon">
+          <i class="fa-solid fa-chevron-right cursor-pointer"></i>
+          <i class="fa-solid fa-xmark lightbox-background__container__icon__close cursor-pointer"></i>
+        </div>
+      </div>
+    </div>
     
     <!-- Modal -->
     <div id="contact_modal">
 			<div class="modal">
 				<header>
           <h2>Contactez-moi {prénom nom}</h2>
-          <figure style="margin: 0;padding:0;">
+          <figure>
             <img src="assets/icons/close.svg" onclick="closeModal()">
           </figure>
         </header>

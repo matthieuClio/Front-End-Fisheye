@@ -1,13 +1,22 @@
-.margin-bottom-text {
-  margin-bottom: 15px;
-}
-
 .font-weight-bold {
   font-weight: bold;
 }
 
 .margin-right-and-left {
   margin: 0 100px;
+}
+
+.margin-bottom-text {
+  margin-bottom: 15px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -128,12 +137,14 @@ h1 {
 
 .order-by {
   display: flex;
+  position: relative;
   border: 2px solid black;
 }
 .order-by__ul {
+  position: absolute;
+  left: 80px;
   padding: 8px;
   margin: 0;
-  margin-left: 10px;
   font-size: 13px;
   color: white;
   width: auto;
@@ -157,13 +168,14 @@ h1 {
   border-bottom: 1px solid white;
 }
 
-.lightbox-container {
+/* Photograph media */
+.media-container {
   background-color: orange;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.lightbox-container__figure {
+.media-container__figure {
   border: 2px solid blue;
   display: flex;
   margin: 0;
@@ -173,13 +185,13 @@ h1 {
   overflow: hidden;
   flex-direction: column;
 }
-.lightbox-container__figure__image {
+.media-container__figure__image {
   border: 2px solid green;
   height: 300px;
   object-fit: cover;
   border-radius: 3px;
 }
-.lightbox-container__figure__figcaption {
+.media-container__figure__figcaption {
   border: 2px solid purple;
   display: flex;
   justify-content: space-between;
@@ -187,8 +199,70 @@ h1 {
   height: 50px;
   color: #901C1C;
 }
-.lightbox-container__figure__figcaption__icon {
+.media-container__figure__figcaption__icon {
   margin-left: 4px;
+}
+
+/* Lightbox modal */
+.lightbox-background {
+  z-index: 2;
+  position: fixed;
+  display: flex;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  background-color: rgba(145, 145, 145, 0.2);
+  width: 100%;
+  height: 100%;
+}
+.lightbox-background__container {
+  border: 4px solid purple;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  width: 1200px;
+  background-color: white;
+  color: #901C1C;
+}
+.lightbox-background__container__icon-left {
+  border: 2px solid blue;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+  font-size: 40px;
+}
+.lightbox-background__container__figure {
+  display: flex;
+  flex-direction: column;
+}
+.lightbox-background__container__figure__image {
+  border: 2px solid orange;
+  width: 700px;
+  height: 500px;
+  object-fit: cover;
+  object-position: 0 -140px;
+}
+.lightbox-background__container__figure__caption {
+  padding-top: 10px;
+  border: 2px solid green;
+}
+.lightbox-background__container__icon {
+  position: relative;
+  border: 2px solid blue;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 20px;
+  font-size: 40px;
+}
+.lightbox-background__container__icon__close {
+  position: absolute;
+  top: 0;
+  border: 2px solid red;
 }
 
 #contact_modal {
