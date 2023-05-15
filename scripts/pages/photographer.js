@@ -15,54 +15,70 @@ async function getPhotographers(id) {
     const response = await fetch('./data/photographers.json');
     const apiInternal = await response.json(); // response contain photographers and media object
     const photographers = apiInternal.photographers; // apiInternal.photographers reference to photographers object
-    console.log('Test API'); // Test API
-    console.log(apiInternal); // Test API
+    const media = apiInternal.media; // apiInternal.media reference to media object
+    console.log('Test API'); // Test API - Can be delete
+    console.log(apiInternal); // Test API - Can be delete
 
     // Get specific data of photographer
     let count = 0;
-    let maxData = photographers.length;
+    let dataLength = photographers.length;
     let findPhotographer = false;
     const idUser = id;
-    // console.log (idUser);
-    // let test = photographers[0];
-    // console.log(photographers[0].id);
-    // console.log(maxData);
+    let photographersData;
+    let mediasData = [];
 
-    
-    while(count < maxData && !findPhotographer) {
-
+    // Get specific photographer data
+    while(count < dataLength && !findPhotographer) {
         console.log('ok');
+
         if(photographers[count].id == idUser) {
-            const data = photographers[count];
+            photographersData = photographers[count];
             findPhotographer = true;
 
-            console.log(data);
+            // console.log(photographersData);
             console.log(findPhotographer);
         }
         count++;
     }
 
-    // console.log(data)
+    // Get specific medias data
+    media.forEach(element => { // Element relative to media
+        if(idUser == element.photographerId) {
+            mediasData.push(element);
+        }
+    });
 
-    return ({ photographers })
+    return ({photographersData, mediasData});
 }
 
-async function displayInformations() {
+async function displayInformations(photographerAndMediaDatas) {
+    // Photographer identity informations
+    const userInfo = userProfileFactory(photographerAndMediaDatas.photographersData);
+    userInfo.getUserProfileDOM();
+
+    // Photographer medias informations
+    const mediaContainer = document.querySelector(".media-container");
+    
+    photographerAndMediaDatas.mediasData.forEach((media) => {
+        const userMedias = userMediasFactory(media);
+        const UserMediaDOM = userMedias.getUserMediaDOM(); // Return DOM container 
+        mediaContainer.appendChild(UserMediaDOM);
+    });
+    
 }
 
 // Main function
 async function init() {
-
     // Get id user
     const urlId = await getUserId();
     const idUser = urlId.paramUrl; 
     // console.log(idUser);
 
-    // Get photographe data
-    const photographerDatas = getPhotographers(idUser);
+    // Get photographer data
+    const photographerAndMediaDatas = await getPhotographers(idUser);
 
     // Display photographers personal informations
-    // displayInformations();
+    displayInformations(photographerAndMediaDatas);
 };
 
 init();

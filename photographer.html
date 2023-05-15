@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e59eb18cc2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css">
     <title>Fisheye - photographe </title>
   </head>
   <body>
@@ -18,17 +18,7 @@
       <!-- User profil -->
       <div class="photograph-header margin-right-and-left">
         <div class="photograph-header__photograph-info">
-          <h1 class="photograph-header__photograph-info__name margin-bottom-text">
-            Prénom nom
-          </h1>
-
-          <span class="photograph-header__photograph-info__city margin-bottom-text">
-            Ville
-          </span>
-
-          <p class="photograph-header__photograph-info__paragraph">
-            Paragraphe
-          </p>
+          <!-- content generate by javaScript -->
         </div>
 
         <div class="photograph-header__button">
@@ -37,7 +27,7 @@
 
         <div class="photograph-header__photo">
           <figure class="photograph-header__photo__container">
-            <img src="assets/Photos/PhotographersId/MimiKeel.jpg" alt="photo de profil" class="photograph-header__photo__container__image">
+            <!-- content generate by javaScript -->
           </figure>
         </div>
       </div>
@@ -64,7 +54,7 @@
 
       <!-- Media -->
       <div class="media-container margin-right-and-left">
-        <figure class="media-container__figure">
+        <!-- <figure class="media-container__figure">
           <img src="./assets/Photos/Mimi/Animals_Rainbow.jpg" alt="" class="media-container__figure__image">
           <figcaption class="media-container__figure__figcaption">
             Arc-en-ciel
@@ -102,7 +92,7 @@
               10<i class="fa-solid fa-heart media-container__figure__figcaption__icon"></i>
             </span>
           </figcaption>
-        </figure>
+        </figure> -->
       </div>
     </main>
 
@@ -113,7 +103,9 @@
         <i class="fa-solid fa-heart"></i>
       </span>
       <span>
-        <span>300</span>€ / jour
+        <span id="pricing">
+          <!-- content generate by javaScript -->
+        </span>€ / jour
       </span>
     </div>
 
@@ -158,7 +150,8 @@
 			</div>
 		</div>
 
-    <script src="/scripts/factories/photographerPage.js"></script>
+    <script src="/scripts/factories/userProfile.js"></script>
+    <script src="/scripts/factories/userMedias.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>

@@ -11,8 +11,6 @@
         width: 100%;
 
         &__name {
-            margin: 0;
-            padding: 0;
             display: block;
             color: $secondary;
             font-size: 40px;
@@ -46,16 +44,17 @@
         &__container {
             margin: 0;
             padding: 0;
+            top: 0;
             border: 2px solid blue;
             width: 200px;
             border-radius: 100%;
             overflow: hidden;
             
             &__image {
-                width: 350px;
-                height: 350px;
+                width: 200px;
+                height: 200px;
                 object-fit: cover;
-                object-position: -80px -130px;
+                // object-position: -80px -130px;
             }
         }
     }
@@ -134,6 +133,13 @@
             height: 300px;
             object-fit: cover;
             border-radius: 3px;
+        }
+
+        &__video {
+            border: 2px solid red;
+            height: 300px;
+            object-fit: cover;
+
         }
 
         &__figcaption {
