@@ -16,13 +16,13 @@
 
     <main id="main">
       <!-- User profil -->
-      <div class="photograph-header margin-right-and-left">
+      <div class="photograph-header margin-right-and-left margin-bottom-text">
         <div class="photograph-header__photograph-info">
           <!-- content generate by javaScript -->
         </div>
 
         <div class="photograph-header__button">
-          <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+          <button class="contact_button" id="open">Contactez-moi</button>
         </div>
 
         <div class="photograph-header__photo">
@@ -54,6 +54,8 @@
 
       <!-- Media -->
       <div class="media-container margin-right-and-left">
+            <!-- content generate by javaScript -->
+
         <!-- <figure class="media-container__figure">
           <img src="./assets/Photos/Mimi/Animals_Rainbow.jpg" alt="" class="media-container__figure__image">
           <figcaption class="media-container__figure__figcaption">
@@ -108,7 +110,7 @@
         </span>€ / jour
       </span>
     </div>
-
+    
     <!-- Lightbox modal -->
     <div class="lightbox-background">
       <div class="lightbox-background__container">
@@ -128,31 +130,36 @@
     <div id="contact_modal">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi {prénom nom}</h2>
+          <h2>Contactez-moi 
+            <span>
+              <!-- content generate by javaScript -->
+            </span>
+          </h2>
           <figure>
-            <img src="assets/icons/close.svg" onclick="closeModal()">
+            <img src="assets/icons/close.svg" id="close">
           </figure>
         </header>
 
-				<form>
+				<form id="contactForm">
 					<div>
 						<label>Prénom</label>
-						<input type="text">
+						<input type="text" id="inputFirstName">
             <label>Nom</label>
-						<input type="text">
+						<input type="text" id="inputName">
             <label>Email</label>
-						<input type="text">
+						<input type="text" id="inputEmail">
             <label>Votre message</label>
-            <textarea></textarea>
+            <textarea id="inputMessage"></textarea>
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>
 
+    <script src="/scripts/utils/contactForm.js"></script>
+    <script src="/scripts/utils/lightbox.js"></script>
     <script src="/scripts/factories/userProfile.js"></script>
     <script src="/scripts/factories/userMedias.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>

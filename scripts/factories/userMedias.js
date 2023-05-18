@@ -1,5 +1,5 @@
 function userMediasFactory(data) {
-    const {image, like, title, video} = data;
+    const {image, likes, title, video, photographerId} = data;
     const folderPath = "./assets/Photos/PhotographerMedia/";
 
     function getUserMediaDOM() {
@@ -15,7 +15,11 @@ function userMediasFactory(data) {
         i.setAttribute("class", "fa-solid fa-heart media-container__figure__figcaption__icon");
 
         figcaption.textContent = title;
-        spanNumber.textContent = 10;
+        spanNumber.textContent = likes;
+
+        figure.addEventListener("click", () => {
+            openLightbox(image, video, title, photographerId); // A CONTINUER !!!
+        });
 
         // Media is a video
         if(image == undefined) {
@@ -24,12 +28,14 @@ function userMediasFactory(data) {
 
             videoElt.setAttribute("class", "media-container__figure__video");
             videoElt.setAttribute("alt", "Vidéo de la galerie d'image");
+            videoElt.setAttribute("id", "video_id");
             videoElt.controls = true;
             sourceMP4.source = "video/mp4";
             sourceMP4.src = folderPath + video;
 
             figure.appendChild(videoElt);
             videoElt.appendChild(sourceMP4);
+
         } else { // Media is a image
             img.setAttribute("src", folderPath + image);
             img.setAttribute("class", "media-container__figure__image");

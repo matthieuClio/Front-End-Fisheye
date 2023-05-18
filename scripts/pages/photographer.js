@@ -29,14 +29,14 @@ async function getPhotographers(id) {
 
     // Get specific photographer data
     while(count < dataLength && !findPhotographer) {
-        console.log('ok');
+        console.log('Photographer not find');
 
         if(photographers[count].id == idUser) {
             photographersData = photographers[count];
             findPhotographer = true;
 
             // console.log(photographersData);
-            console.log(findPhotographer);
+            console.log('photographer found : ' + findPhotographer);
         }
         count++;
     }
@@ -69,6 +69,11 @@ async function displayInformations(photographerAndMediaDatas) {
 
 // Main function
 async function init() {
+    // Initialize modal functions
+    displayModal();
+    closeModal();
+    sendData();
+
     // Get id user
     const urlId = await getUserId();
     const idUser = urlId.paramUrl; 

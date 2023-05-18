@@ -4,6 +4,7 @@ function userProfileFactory(data) {
     const photographerHeader = document.querySelector('.photograph-header__photograph-info');
     const photographerHeaderPhoto = document.querySelector(".photograph-header__photo__container");
     const pricingContainer = document.getElementById("pricing");
+    const contactModal = document.querySelector(".modal span");
     console.log(data);
 
     function getUserProfileDOM() {
@@ -23,6 +24,7 @@ function userProfileFactory(data) {
         spanHeader.textContent = city;
         pHeader.textContent = tagline;
         spanPricing.textContent = price;
+        contactModal.textContent = name;
 
         photographerHeader.appendChild(h1Header);
         photographerHeader.appendChild(spanHeader);
