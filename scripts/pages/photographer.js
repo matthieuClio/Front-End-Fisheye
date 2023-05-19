@@ -29,7 +29,7 @@ async function getPhotographers(id) {
 
     // Get specific photographer data
     while(count < dataLength && !findPhotographer) {
-        console.log('Photographer not find');
+        console.log('Nb Photographer');
 
         if(photographers[count].id == idUser) {
             photographersData = photographers[count];
@@ -52,6 +52,8 @@ async function getPhotographers(id) {
 }
 
 async function displayInformations(photographerAndMediaDatas) {
+    const mediaId = [];
+
     // Photographer identity informations
     const userInfo = userProfileFactory(photographerAndMediaDatas.photographersData);
     userInfo.getUserProfileDOM();
@@ -59,12 +61,18 @@ async function displayInformations(photographerAndMediaDatas) {
     // Photographer medias informations
     const mediaContainer = document.querySelector(".media-container");
     
+    // Build a array content all media id
+    photographerAndMediaDatas.mediasData.forEach((element) => {
+        mediaId.push(element.id);
+    })
+    console.log(mediaId);
+
+    // Create Dom element for each media
     photographerAndMediaDatas.mediasData.forEach((media) => {
-        const userMedias = userMediasFactory(media);
+        const userMedias = userMediasFactory(media, mediaId);
         const UserMediaDOM = userMedias.getUserMediaDOM(); // Return DOM container 
         mediaContainer.appendChild(UserMediaDOM);
     });
-    
 }
 
 // Main function
@@ -76,12 +84,11 @@ async function init() {
 
     // Get id user
     const urlId = await getUserId();
-    const idUser = urlId.paramUrl; 
-    // console.log(idUser);
+    const idUser = urlId.paramUrl;
 
     // Get photographer data
     const photographerAndMediaDatas = await getPhotographers(idUser);
-
+    
     // Display photographers personal informations
     displayInformations(photographerAndMediaDatas);
 };

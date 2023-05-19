@@ -1,5 +1,5 @@
-function userMediasFactory(data) {
-    const {image, likes, title, video, photographerId} = data;
+function userMediasFactory(data, allMediasId) {
+    const {image, likes, title, video, id} = data;
     const folderPath = "./assets/Photos/PhotographerMedia/";
 
     function getUserMediaDOM() {
@@ -10,7 +10,7 @@ function userMediasFactory(data) {
         const spanNumber = document.createElement( 'span' );
         const i = document.createElement( 'i' );
 
-        figure.setAttribute("class", "media-container__figure");
+        figure.setAttribute("class", "media-container__figure cursor-pointer");
         figcaption.setAttribute("class", "media-container__figure__figcaption");
         i.setAttribute("class", "fa-solid fa-heart media-container__figure__figcaption__icon");
 
@@ -18,8 +18,9 @@ function userMediasFactory(data) {
         spanNumber.textContent = likes;
 
         figure.addEventListener("click", () => {
-            openLightbox(image, video, title, photographerId); // A CONTINUER !!!
-        });
+            openLightbox(image, video, title, id, allMediasId);
+            closeLightbox();
+        }); 
 
         // Media is a video
         if(image == undefined) {
@@ -29,7 +30,7 @@ function userMediasFactory(data) {
             videoElt.setAttribute("class", "media-container__figure__video");
             videoElt.setAttribute("alt", "Vidéo de la galerie d'image");
             videoElt.setAttribute("id", "video_id");
-            videoElt.controls = true;
+            videoElt.controls = false; 
             sourceMP4.source = "video/mp4";
             sourceMP4.src = folderPath + video;
 

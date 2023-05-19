@@ -112,16 +112,25 @@
     </div>
     
     <!-- Lightbox modal -->
-    <div class="lightbox-background">
+    <div class="lightbox-background" id="lightbox-background">
       <div class="lightbox-background__container">
         <i class="fa-solid fa-chevron-left lightbox-background__container__icon-left cursor-pointer"></i>
         <figure class="lightbox-background__container__figure">
-          <img src="assets/Photos/Mimi/Animals_Rainbow.jpg" alt="" class="lightbox-background__container__figure__image">
-          <figcaption class="lightbox-background__container__figure__caption">Arc-en-ciel</figcaption>
+          <!-- src generate by JavaScript -->
+          <img src="" alt="Image du modal" class="lightbox-background__container__figure__image" id="lightbox-image">
+          
+          <!-- src generate by JavaScript -->
+          <video src="" controls alt="Video du modal" class="lightbox-background__container__figure__video" id="lightbox-video">
+            <source source="video/mp4">
+            </source>
+          </video>
+          <figcaption class="lightbox-background__container__figure__caption" id="lightbox-figcaption">
+            Arc-en-ciel
+          </figcaption>
         </figure>
         <div class="lightbox-background__container__icon">
           <i class="fa-solid fa-chevron-right cursor-pointer"></i>
-          <i class="fa-solid fa-xmark lightbox-background__container__icon__close cursor-pointer"></i>
+          <i class="fa-solid fa-xmark lightbox-background__container__icon__close cursor-pointer" id="close-lightbox"></i>
         </div>
       </div>
     </div>
