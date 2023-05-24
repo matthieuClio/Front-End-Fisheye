@@ -26,6 +26,7 @@ async function getPhotographers(id) {
     const idUser = id;
     let photographersData;
     let mediasData = [];
+    
 
     // Get specific photographer data
     while(count < dataLength && !findPhotographer) {
@@ -53,6 +54,9 @@ async function getPhotographers(id) {
 
 async function displayInformations(photographerAndMediaDatas) {
     const mediaId = [];
+    const mediaImage = [];
+    const mediaVideo = [];
+    const mediaTitle = [];
 
     // Photographer identity informations
     const userInfo = userProfileFactory(photographerAndMediaDatas.photographersData);
@@ -64,12 +68,15 @@ async function displayInformations(photographerAndMediaDatas) {
     // Build a array content all media id
     photographerAndMediaDatas.mediasData.forEach((element) => {
         mediaId.push(element.id);
+        mediaImage.push(element.image);
+        mediaVideo.push(element.video);
+        mediaTitle.push(element.title);
     })
     console.log(mediaId);
 
     // Create Dom element for each media
     photographerAndMediaDatas.mediasData.forEach((media) => {
-        const userMedias = userMediasFactory(media, mediaId);
+        const userMedias = userMediasFactory(media, mediaId, mediaImage, mediaVideo, mediaTitle);
         const UserMediaDOM = userMedias.getUserMediaDOM(); // Return DOM container 
         mediaContainer.appendChild(UserMediaDOM);
     });
@@ -77,7 +84,7 @@ async function displayInformations(photographerAndMediaDatas) {
 
 // Main function
 async function init() {
-    // Initialize modal functions
+    // Initialize contact modal functions
     displayModal();
     closeModal();
     sendData();

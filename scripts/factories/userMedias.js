@@ -1,4 +1,4 @@
-function userMediasFactory(data, allMediasId) {
+function userMediasFactory(data, allMediasId, mediaImage, mediaVideo, mediaTitle) {
     const {image, likes, title, video, id} = data;
     const folderPath = "./assets/Photos/PhotographerMedia/";
 
@@ -17,10 +17,12 @@ function userMediasFactory(data, allMediasId) {
         figcaption.textContent = title;
         spanNumber.textContent = likes;
 
+        // Call lightbox fonctions for each object
         figure.addEventListener("click", () => {
-            openLightbox(image, video, title, id, allMediasId);
+            openLightbox(image, video, title, id);
             closeLightbox();
-        }); 
+            switchMediaLightxbox(image, video, title, id, allMediasId, mediaImage, mediaVideo, mediaTitle);
+        });
 
         // Media is a video
         if(image == undefined) {
