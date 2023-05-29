@@ -6,18 +6,21 @@ function userMediasFactory(data, allMediasId, mediaImage, mediaVideo, mediaTitle
         const figure = document.createElement( 'figure' );
         const img = document.createElement( 'img' );
         const figcaption = document.createElement( 'figcaption' );
+        const spanText = document.createElement( 'span' );
         const spanContainer = document.createElement( 'span' );
         const spanNumber = document.createElement( 'span' );
         const i = document.createElement( 'i' );
 
         figure.setAttribute("class", "media-container__figure cursor-pointer");
         figcaption.setAttribute("class", "media-container__figure__figcaption");
+        spanText.setAttribute("class", "span-text"); // Class added for select the element with JavaScript on photographer.js
         i.setAttribute("class", "fa-solid fa-heart media-container__figure__figcaption__icon");
+        spanNumber.setAttribute("class", "span-number"); // Class added for select the element with JavaScript on photographer.js
 
-        figcaption.textContent = title;
+        spanText.textContent = title;
         spanNumber.textContent = likes;
-
-        // Call lightbox fonctions for each object
+        
+        // Call lightbox functions for each object
         figure.addEventListener("click", () => {
             openLightbox(image, video, title, id);
             closeLightbox();
@@ -48,6 +51,7 @@ function userMediasFactory(data, allMediasId, mediaImage, mediaVideo, mediaTitle
         }
 
         figure.appendChild(figcaption);
+        figcaption.appendChild(spanText);
         figcaption.appendChild(spanContainer);
         spanContainer.appendChild(spanNumber);
         spanContainer.appendChild(i);

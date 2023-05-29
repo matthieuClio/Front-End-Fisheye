@@ -71,7 +71,6 @@ function switchMediaLightxbox(image, video, title, mediaId, allMediasId, mediaIm
             changeImageVideo();
         }
         console.log(lightboxIndex);
-        // console.log(mediaId);
     }
     
     function rightChevron() {
@@ -86,6 +85,7 @@ function switchMediaLightxbox(image, video, title, mediaId, allMediasId, mediaIm
         console.log(lightboxIndex);
     };
 
+    // Display Image or video
     function changeImageVideo() {
         lightboxFigcaptionElt.textContent = mediaTitle[lightboxIndex];
     
@@ -101,8 +101,8 @@ function switchMediaLightxbox(image, video, title, mediaId, allMediasId, mediaIm
         }
     }
 
-    console.log(allMediasId); // Debug 
-    console.log(LightboxLength); // Debug 
-    console.log(lightboxIndex); // Debug
-    console.log('switchMediaLightxbox');
+    // console.log(allMediasId); // Debug 
+    // console.log(LightboxLength); // Debug 
+    // console.log(lightboxIndex); // Debug
+    // console.log('switchMediaLightxbox');
 }

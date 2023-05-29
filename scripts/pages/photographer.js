@@ -52,21 +52,25 @@ async function getPhotographers(id) {
     return ({photographersData, mediasData});
 }
 
-async function displayInformations(photographerAndMediaDatas) {
-    const mediaId = [];
+async function displayInformationsPhotographer(photographersData) {
+    // Photographer identity informations
+    const userInfo = userProfileFactory(photographersData);
+    userInfo.getUserProfileDOM();
+}
+
+async function displayInformationsMedia(mediasData) {
+    // Arrays for specific data
     const mediaImage = [];
     const mediaVideo = [];
     const mediaTitle = [];
-
-    // Photographer identity informations
-    const userInfo = userProfileFactory(photographerAndMediaDatas.photographersData);
-    userInfo.getUserProfileDOM();
+    const mediaId = [];  
+    let mediasElt = []; // For contain all DOM media
 
     // Photographer medias informations
     const mediaContainer = document.querySelector(".media-container");
     
-    // Build a array content all media id
-    photographerAndMediaDatas.mediasData.forEach((element) => {
+    // Build arrays content specific data from mediasData
+    mediasData.forEach((element) => {
         mediaId.push(element.id);
         mediaImage.push(element.image);
         mediaVideo.push(element.video);
@@ -75,11 +79,41 @@ async function displayInformations(photographerAndMediaDatas) {
     console.log(mediaId);
 
     // Create Dom element for each media
-    photographerAndMediaDatas.mediasData.forEach((media) => {
+    mediasData.forEach((media) => {
         const userMedias = userMediasFactory(media, mediaId, mediaImage, mediaVideo, mediaTitle);
         const UserMediaDOM = userMedias.getUserMediaDOM(); // Return DOM container 
         mediaContainer.appendChild(UserMediaDOM);
+        mediasElt.push(UserMediaDOM);
     });
+    return mediasElt;
+}
+
+async function sortInformations(allMediasElt, mediasData) {
+    // <Delete all media ELT
+    allMediasElt.forEach((element) => {
+        element.remove();
+    });
+    
+    // Sort by popularity
+
+    // Sort by date
+
+    // Sort by name
+    // Do a sort
+    let sortLikeMediaData = mediasData.sort((a,b) => a.likes - b.likes);
+    console.log(sortLikeMediaData);
+
+    // Call again a display informations function with sort media
+    displayInformationsMedia(mediasData);
+
+
+    // MAUVAISE METHODE ;(
+    // const mediaContainerElt = document.querySelector(".media-container");
+    // mediaContainerElt.appendChild(allMediasElt[2]);
+    // mediaContainerElt.appendChild(allMediasElt[3]);
+    // mediaContainerElt.appendChild(allMediasElt[1]);
+    // console.log(mediaContainerElt);
+    // console.log(mediasData[0].likes);
 }
 
 // Main function
@@ -93,11 +127,17 @@ async function init() {
     const urlId = await getUserId();
     const idUser = urlId.paramUrl;
 
-    // Get photographer data
+    // Get photographer datas
     const photographerAndMediaDatas = await getPhotographers(idUser);
     
     // Display photographers personal informations
-    displayInformations(photographerAndMediaDatas);
+    await displayInformationsPhotographer(photographerAndMediaDatas.photographersData);
+
+    // Display photographers personal media
+    let allMediasElt = await displayInformationsMedia(photographerAndMediaDatas.mediasData);
+
+    // Sort photographers personal informations
+    await sortInformations(allMediasElt, photographerAndMediaDatas.mediasData);
 };
 
 init();
