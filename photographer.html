@@ -39,14 +39,18 @@
         </label>
 
         <ul class="order-by__ul">
-          <li class="order-by__ul__li order-by__ul__li__popularity">
+          <i class="fa-solid  fa-chevron-down order-by__ul__icon" id="chevron-down-icon"></i>
+          <i class="fa-solid fa-chevron-up order-by__ul__icon display-none" id="chevron-up-icon"></i>
+
+          <li class="order-by__ul__li order-by__ul__li__popularity" id="order-by-popularity">
             Popularité
-            <i class="fa-solid fa-chevron-up order-by__ul__li__popularity__icon"></i>
           </li>
-          <li class="order-by__ul__li order-by__ul__li__date">
+
+          <li class="order-by__ul__li order-by__ul__li__date display-none" id="order-by-date">
             Date
           </li>
-          <li class="order-by__ul__li">
+
+          <li class="order-by__ul__li order-by__ul__li__titre display-none" id="order-by-title">
             Titre
           </li>
         </ul>
@@ -125,6 +129,7 @@
 			</div>
 		</div>
 
+    <script src="/scripts/utils/sortDisplayList.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
     <script src="/scripts/utils/lightbox.js"></script>
     <script src="/scripts/factories/userProfile.js"></script>

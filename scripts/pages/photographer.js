@@ -89,31 +89,62 @@ async function displayInformationsMedia(mediasData) {
 }
 
 async function sortInformations(allMediasElt, mediasData) {
-    // <Delete all media ELT
-    allMediasElt.forEach((element) => {
-        element.remove();
-    });
-    
+    const orderByPopularityElt = document.getElementById("order-by-popularity");
+    const orderByDateElt = document.getElementById("order-by-date");
+    const orderByTitleElt = document.getElementById("order-by-title");
+
+    // Delete all media DOM
+    async function deleteMedias() {
+        allMediasElt.forEach((element) => {
+            element.remove();
+        });
+
+        // A tester
+        // allMediasElt.innerHTML =
+    }
+
+    // Sort event
+    // ..........
     // Sort by popularity
-
+    orderByPopularityElt.addEventListener("click", sortByPopularity); 
     // Sort by date
-
+    orderByDateElt.addEventListener("click", sortByDate);
     // Sort by name
-    // Do a sort
-    let sortLikeMediaData = mediasData.sort((a,b) => a.likes - b.likes);
-    console.log(sortLikeMediaData);
+    orderByTitleElt.addEventListener("click", sortByName);
+    
+    // Sort functions
+    // .............
+    async function sortByPopularity() {
+        // Delete
+        await deleteMedias();
+        // Sort
+        mediasData.sort((a,b) => b.likes - a.likes);
+        // Display media again
+        allMediasElt = await displayInformationsMedia(mediasData);
+        console.log(mediasData);
+    }
 
-    // Call again a display informations function with sort media
-    displayInformationsMedia(mediasData);
+    async function sortByDate() {
+        // Delete
+        deleteMedias();
+        // Sort
+        mediasData.sort((a,b) => {
+            return new Date(b.date) - new Date(a.date);
+        });
+        // Display again
+        allMediasElt = await displayInformationsMedia(mediasData);
+        console.log(mediasData);
+    }
 
-
-    // MAUVAISE METHODE ;(
-    // const mediaContainerElt = document.querySelector(".media-container");
-    // mediaContainerElt.appendChild(allMediasElt[2]);
-    // mediaContainerElt.appendChild(allMediasElt[3]);
-    // mediaContainerElt.appendChild(allMediasElt[1]);
-    // console.log(mediaContainerElt);
-    // console.log(mediasData[0].likes);
+    async function sortByName() {
+        // Delete
+        deleteMedias();
+        // Sort
+        mediasData.sort((a, b) => a.title.localeCompare(b.title));
+        // Display again
+        allMediasElt = await displayInformationsMedia(mediasData);
+        console.log(mediasData);
+    }
 }
 
 // Main function
@@ -122,6 +153,9 @@ async function init() {
     displayModal();
     closeModal();
     sendData();
+
+    // Initialize sort display container
+    sortDisplaylist();
 
     // Get id user
     const urlId = await getUserId();
