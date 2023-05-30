@@ -183,6 +183,7 @@ h1 {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 .media-container__figure {
   border: 2px solid blue;
@@ -214,6 +215,7 @@ h1 {
   color: #901C1C;
 }
 .media-container__figure__figcaption__icon {
+  position: relative;
   margin-left: 4px;
 }
 

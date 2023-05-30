@@ -63,11 +63,14 @@ async function displayInformationsMedia(mediasData) {
     const mediaImage = [];
     const mediaVideo = [];
     const mediaTitle = [];
-    const mediaId = [];  
+    const mediaLikes = [];
+    let mediaLikesAll = 0;
+    const mediaId = [];
     let mediasElt = []; // For contain all DOM media
 
-    // Photographer medias informations
+    // DOM elements
     const mediaContainer = document.querySelector(".media-container");
+    const likeContainer = document.getElementById("like");
     
     // Build arrays content specific data from mediasData
     mediasData.forEach((element) => {
@@ -75,8 +78,16 @@ async function displayInformationsMedia(mediasData) {
         mediaImage.push(element.image);
         mediaVideo.push(element.video);
         mediaTitle.push(element.title);
+        mediaLikes.push(element.likes);
     })
     console.log(mediaId);
+
+    // Initialize the likes counter
+    mediaLikes.forEach((element) => {
+        mediaLikesAll = mediaLikesAll + element;
+    });
+
+    likeContainer.textContent = mediaLikesAll;
 
     // Create Dom element for each media
     mediasData.forEach((media) => {
@@ -92,15 +103,15 @@ async function sortInformations(allMediasElt, mediasData) {
     const orderByPopularityElt = document.getElementById("order-by-popularity");
     const orderByDateElt = document.getElementById("order-by-date");
     const orderByTitleElt = document.getElementById("order-by-title");
+    const mediaContainerElt = document.querySelector(".media-container");
 
     // Delete all media DOM
     async function deleteMedias() {
-        allMediasElt.forEach((element) => {
-            element.remove();
-        });
+        mediaContainerElt.innerHTML = "";
 
-        // A tester
-        // allMediasElt.innerHTML =
+        // allMediasElt.forEach((element) => {
+        //     element.remove();
+        // });
     }
 
     // Sort event

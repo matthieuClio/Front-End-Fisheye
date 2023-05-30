@@ -124,6 +124,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 50px;
+    margin-bottom: 50px;
 
     &__figure {
         border: 2px solid blue;
@@ -158,6 +159,7 @@
             color: $primary;
 
             &__icon {
+                position:relative;
                 margin-left: 4px;
             }
         }
