@@ -11,7 +11,7 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <img src="assets/images/logo.png" class="logo" alt="Logo du site">
     </header>
 
     <main id="main">
@@ -38,22 +38,22 @@
           Trier par :
         </label>
 
-        <ul class="order-by__ul">
+        <div class="order-by__ul">
           <i class="fa-solid  fa-chevron-down order-by__ul__icon" id="chevron-down-icon"></i>
           <i class="fa-solid fa-chevron-up order-by__ul__icon display-none" id="chevron-up-icon"></i>
 
-          <li class="order-by__ul__li order-by__ul__li__popularity" id="order-by-popularity">
+          <div class="order-by__ul__li order-by__ul__li__popularity" id="order-by-popularity">
             Popularité
-          </li>
+          </div>
 
-          <li class="order-by__ul__li order-by__ul__li__date display-none" id="order-by-date">
+          <div class="order-by__ul__li order-by__ul__li__date display-none" id="order-by-date">
             Date
-          </li>
+          </div>
 
-          <li class="order-by__ul__li order-by__ul__li__titre display-none" id="order-by-title">
+          <div class="order-by__ul__li order-by__ul__li__titre display-none" id="order-by-title">
             Titre
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
 
       <!-- Media -->
@@ -83,13 +83,12 @@
         <i class="fa-solid fa-chevron-left lightbox-background__container__icon-left cursor-pointer" id="chevron-left-icon"></i>
         <figure class="lightbox-background__container__figure">
           <!-- src generate by JavaScript -->
-          <img src="" alt="Image du modal" class="lightbox-background__container__figure__image" id="lightbox-image">
+          <img src="#" alt="Image du modal" class="lightbox-background__container__figure__image" id="lightbox-image">
           
           <!-- src generate by JavaScript -->
-          <video src="" controls alt="Video du modal" class="lightbox-background__container__figure__video" id="lightbox-video">
-            <source source="video/mp4">
-            </source>
+          <video src="#" controls class="lightbox-background__container__figure__video" id="lightbox-video">
           </video>
+          
           <figcaption class="lightbox-background__container__figure__caption" id="lightbox-figcaption">
             Arc-en-ciel
           </figcaption>
@@ -111,7 +110,7 @@
             </span>
           </h2>
           <figure>
-            <img src="assets/icons/close.svg" id="close">
+            <img src="assets/icons/close.svg" alt="Image fermeture du modal" id="close">
           </figure>
         </header>
 
