@@ -19,15 +19,11 @@ function userMediasFactory(data, allMediasId, mediaImage, mediaVideo, mediaTitle
 
         spanText.textContent = title;
         spanNumber.textContent = likes;
-
-        // TEST A SUPPRMIER
-        spanNumber.addEventListener("click", () => {
+        
+        // Associated icon functions for each icon DOM element
+        i.addEventListener("click", () => {
             iconAddLike();
         });
-        // Associated icon functions for each icon DOM element
-        // i.addEventListener("click", () => {
-        //     iconAddLike();
-        // });
 
         // Media is a video
         if(image == undefined) {

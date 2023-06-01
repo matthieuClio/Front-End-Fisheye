@@ -63,31 +63,32 @@ async function displayInformationsMedia(mediasData) {
     const mediaImage = [];
     const mediaVideo = [];
     const mediaTitle = [];
-    const mediaLikes = [];
-    let mediaLikesAll = 0;
     const mediaId = [];
+    let mediaLikesAll = 0;
     let mediasElt = []; // For contain all DOM media
+    let likeNumber;
 
     // DOM elements
     const mediaContainer = document.querySelector(".media-container");
     const likeContainer = document.getElementById("like");
-    
+
     // Build arrays content specific data from mediasData
     mediasData.forEach((element) => {
         mediaId.push(element.id);
         mediaImage.push(element.image);
         mediaVideo.push(element.video);
         mediaTitle.push(element.title);
-        mediaLikes.push(element.likes);
+        mediaLikesAll = mediaLikesAll + element.likes;
     })
     console.log(mediaId);
 
-    // Initialize the likes counter
-    mediaLikes.forEach((element) => {
-        mediaLikesAll = mediaLikesAll + element;
-    });
+    // Verify if likeContainer is already initialize (with a number)
+    likeNumber = parseInt(likeContainer.textContent);
 
-    likeContainer.textContent = mediaLikesAll;
+    if(isNaN(likeNumber)) {
+        likeContainer.textContent = mediaLikesAll;
+        likeNumber = parseInt(likeContainer.textContent);
+    }
 
     // Create Dom element for each media
     mediasData.forEach((media) => {
