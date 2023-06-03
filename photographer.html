@@ -39,8 +39,8 @@
         </label>
 
         <div class="order-by__ul">
-          <i class="fa-solid  fa-chevron-down order-by__ul__icon" id="chevron-down-icon"></i>
-          <i class="fa-solid fa-chevron-up order-by__ul__icon display-none" id="chevron-up-icon"></i>
+          <span class="fa-solid  fa-chevron-down order-by__ul__icon" id="chevron-down-icon"></span>
+          <span class="fa-solid fa-chevron-up order-by__ul__icon display-none" id="chevron-up-icon"></span>
 
           <div class="order-by__ul__li order-by__ul__li__popularity" id="order-by-popularity">
             Popularité
@@ -68,7 +68,7 @@
         <span id="like">
           <!-- content generate by javaScript -->
         </span>
-        <i class="fa-solid fa-heart"></i>
+        <span class="fa-solid fa-heart"></span>
       </span>
       <span>
         <span id="pricing">
@@ -80,7 +80,7 @@
     <!-- Lightbox modal -->
     <div class="lightbox-background" id="lightbox-background">
       <div class="lightbox-background__container">
-        <i class="fa-solid fa-chevron-left lightbox-background__container__icon-left cursor-pointer" id="chevron-left-icon"></i>
+        <span class="fa-solid fa-chevron-left lightbox-background__container__icon-left cursor-pointer" id="chevron-left-icon"></span>
         <figure class="lightbox-background__container__figure">
           <!-- src generate by JavaScript -->
           <img src="#" alt="Image du modal" class="lightbox-background__container__figure__image" id="lightbox-image">
@@ -94,8 +94,8 @@
           </figcaption>
         </figure>
         <div class="lightbox-background__container__icon">
-          <i class="fa-solid fa-chevron-right cursor-pointer" id="chevron-right-icon"></i>
-          <i class="fa-solid fa-xmark lightbox-background__container__icon__close cursor-pointer" id="close-lightbox"></i>
+          <span class="fa-solid fa-chevron-right cursor-pointer" id="chevron-right-icon"></span>
+          <span class="fa-solid fa-xmark lightbox-background__container__icon__close cursor-pointer" id="close-lightbox"></span>
         </div>
       </div>
     </div>
@@ -116,13 +116,13 @@
 
 				<form id="contactForm">
 					<div>
-						<label>Prénom</label>
+						<label for="inputFirstName">Prénom</label>
 						<input type="text" id="inputFirstName">
-            <label>Nom</label>
+            <label for="inputName">Nom</label>
 						<input type="text" id="inputName">
-            <label>Email</label>
+            <label for="inputEmail">Email</label>
 						<input type="text" id="inputEmail">
-            <label>Votre message</label>
+            <label for="inputMessage">Votre message</label>
             <textarea id="inputMessage"></textarea>
 					</div>
           <button class="contact_button">Envoyer</button>
