@@ -2,7 +2,7 @@ function userMediasFactory(data, allMediasId, mediaImage, mediaVideo, mediaTitle
     const {image, likes, title, video, id} = data;
     const folderPath = "./assets/Photos/PhotographerMedia/";
 
-    function getUserMediaDOM() {
+    function getUserMediaDOM(index) {
         const figure = document.createElement( 'figure' );
         const img = document.createElement( 'img' );
         const figcaption = document.createElement( 'figcaption' );
@@ -33,6 +33,7 @@ function userMediasFactory(data, allMediasId, mediaImage, mediaVideo, mediaTitle
             videoElt.setAttribute("class", "media-container__figure__video cursor-pointer");
             videoElt.setAttribute("alt", "Vidéo de la galerie d'image");
             videoElt.setAttribute("id", "video_id");
+            videoElt.setAttribute("tabindex", index);
             videoElt.controls = false; 
             sourceMP4.source = "video/mp4";
             sourceMP4.src = folderPath + video;
@@ -51,6 +52,7 @@ function userMediasFactory(data, allMediasId, mediaImage, mediaVideo, mediaTitle
             img.setAttribute("src", folderPath + image);
             img.setAttribute("class", "media-container__figure__image cursor-pointer");
             img.setAttribute("alt", "Image de la galerie d'image");
+            img.setAttribute("tabindex", index);
 
             figure.appendChild(img);
 

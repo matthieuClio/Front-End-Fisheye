@@ -12,9 +12,12 @@ function userProfileFactory(data) {
         const spanHeader = document.createElement( 'span' );
         const pHeader = document.createElement( 'p' );
         const imgHeader = document.createElement( 'img' );
+        const divHeader = document.createElement( 'div' );
         const spanPricing = document.createElement( 'span' );
 
         h1Header.setAttribute("class", "photograph-header__photograph-info__name margin-bottom-text");
+        h1Header.setAttribute("tabindex", "2");
+        divHeader.setAttribute("tabindex", "3");
         spanHeader.setAttribute("class", "photograph-header__photograph-info__city margin-bottom-text");
         pHeader.setAttribute("class", "photograph-header__photograph-info__paragraph");
         imgHeader.setAttribute("src", `assets/Photos/PhotographersId/${portrait}`);
@@ -27,8 +30,9 @@ function userProfileFactory(data) {
         contactModal.textContent = name;
 
         photographerHeader.appendChild(h1Header);
-        photographerHeader.appendChild(spanHeader);
-        photographerHeader.appendChild(pHeader);
+        photographerHeader.appendChild(divHeader);
+        divHeader.appendChild(spanHeader);
+        divHeader.appendChild(pHeader);
         photographerHeaderPhoto.appendChild(imgHeader);
         pricingContainer.appendChild(spanPricing);
     }
