@@ -10,7 +10,7 @@
     <title>Fisheye - photographe </title>
   </head>
   <body>
-    <header tabindex="1">
+    <header tabindex="19">
       <img src="assets/images/logo.png" class="logo" alt="Logo du site">
     </header>
 
@@ -22,11 +22,11 @@
         </div>
 
         <div class="photograph-header__button">
-          <button class="contact_button" id="open" tabindex="4">Contactez-moi</button>
+          <button class="contact_button" id="open" tabindex="22">Contactez-moi</button>
         </div>
 
         <div class="photograph-header__photo">
-          <figure class="photograph-header__photo__container" tabindex="5">
+          <figure class="photograph-header__photo__container" tabindex="23">
             <!-- content generate by javaScript -->
           </figure>
         </div>
@@ -34,11 +34,11 @@
 
       <!-- Order by -->
       <div class="order-by margin-right-and-left margin-bottom-text">
-        <label class="font-weight-bold" tabindex="7">
+        <label class="font-weight-bold" tabindex="24">
           Trier par :
         </label>
 
-        <div class="order-by__ul" tabindex="8">
+        <div class="order-by__ul" tabindex="26">
           <span class="fa-solid  fa-chevron-down order-by__ul__icon" id="chevron-down-icon"></span>
           <span class="fa-solid fa-chevron-up order-by__ul__icon display-none" id="chevron-up-icon"></span>
 
@@ -63,7 +63,7 @@
     </main>
 
     <!-- Tarification -->
-    <div class="tarification" tabindex="5">
+    <div class="tarification" tabindex="25">
       <span>
         <span id="like">
           <!-- content generate by javaScript -->
@@ -79,53 +79,55 @@
     
     <!-- Lightbox modal -->
     <div class="lightbox-background" id="lightbox-background">
-      <div class="lightbox-background__container">
-        <span class="fa-solid fa-chevron-left lightbox-background__container__icon-left cursor-pointer" id="chevron-left-icon"></span>
+      <div class="lightbox-background__container" tabindex="1">
+        <span class=" lightbox-background__container__icon-left">
+          <span class="fa-solid fa-chevron-left cursor-pointer" id="chevron-left-icon" tabindex="4"></span>
+        </span>
         <figure class="lightbox-background__container__figure">
           <!-- src generate by JavaScript -->
-          <img src="#" alt="Image du modal" class="lightbox-background__container__figure__image" id="lightbox-image">
+          <img src="#" alt="Image du modal" class="lightbox-background__container__figure__image" id="lightbox-image" tabindex="2">
           
-          <!-- src generate by JavaScript -->
           <video src="#" controls class="lightbox-background__container__figure__video" id="lightbox-video">
+            <!-- src generate by JavaScript -->
           </video>
           
-          <figcaption class="lightbox-background__container__figure__caption" id="lightbox-figcaption">
-            Arc-en-ciel
+          <figcaption class="lightbox-background__container__figure__caption" id="lightbox-figcaption" tabindex="3">
+            <!-- src generate by JavaScript -->
           </figcaption>
         </figure>
         <div class="lightbox-background__container__icon">
-          <span class="fa-solid fa-chevron-right cursor-pointer" id="chevron-right-icon"></span>
-          <span class="fa-solid fa-xmark lightbox-background__container__icon__close cursor-pointer" id="close-lightbox"></span>
+          <span class="fa-solid fa-chevron-right cursor-pointer" id="chevron-right-icon" tabindex="5"></span>
+          <span class="fa-solid fa-xmark lightbox-background__container__icon__close cursor-pointer" id="close-lightbox" tabindex="6"></span>
         </div>
       </div>
     </div>
     
     <!-- Modal -->
     <div id="contact_modal">
-			<div class="modal">
+			<div class="modal" tabindex="7">
 				<header>
-          <h2>Contactez-moi 
+          <h2 tabindex="8">Contactez-moi 
             <span>
               <!-- content generate by javaScript -->
             </span>
           </h2>
           <figure>
-            <img src="assets/icons/close.svg" alt="Image fermeture du modal" id="close">
+            <img src="assets/icons/close.svg" alt="Image fermeture du modal" id="close" tabindex="18">
           </figure>
         </header>
 
 				<form id="contactForm">
 					<div>
-						<label for="inputFirstName">Prénom</label>
-						<input type="text" id="inputFirstName">
-            <label for="inputName">Nom</label>
-						<input type="text" id="inputName">
-            <label for="inputEmail">Email</label>
-						<input type="text" id="inputEmail">
-            <label for="inputMessage">Votre message</label>
-            <textarea id="inputMessage"></textarea>
+						<label for="inputFirstName" tabindex="9">Prénom</label>
+						<input type="text" id="inputFirstName" tabindex="10">
+            <label for="inputName" tabindex="11">Nom</label>
+						<input type="text" id="inputName" tabindex="12">
+            <label for="inputEmail" tabindex="13">Email</label>
+						<input type="text" id="inputEmail" tabindex="14">
+            <label for="inputMessage" tabindex="15">Votre message</label>
+            <textarea id="inputMessage" tabindex="16"></textarea>
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <button class="contact_button" tabindex="17">Envoyer</button>
 				</form>
 			</div>
 		</div>

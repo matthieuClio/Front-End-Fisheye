@@ -16,8 +16,8 @@ function userProfileFactory(data) {
         const spanPricing = document.createElement( 'span' );
 
         h1Header.setAttribute("class", "photograph-header__photograph-info__name margin-bottom-text");
-        h1Header.setAttribute("tabindex", "2");
-        divHeader.setAttribute("tabindex", "3");
+        h1Header.setAttribute("tabindex", "20");
+        divHeader.setAttribute("tabindex", "21");
         spanHeader.setAttribute("class", "photograph-header__photograph-info__city margin-bottom-text");
         pHeader.setAttribute("class", "photograph-header__photograph-info__paragraph");
         imgHeader.setAttribute("src", `assets/Photos/PhotographersId/${portrait}`);

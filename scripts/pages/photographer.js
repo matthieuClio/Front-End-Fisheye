@@ -93,7 +93,7 @@ async function displayInformationsMedia(mediasData) {
     // Create Dom element for each media
     mediasData.forEach((media, index) => {
         const userMedias = userMediasFactory(media, mediaId, mediaImage, mediaVideo, mediaTitle);
-        const UserMediaDOM = userMedias.getUserMediaDOM(index + 9); // Return DOM container 
+        const UserMediaDOM = userMedias.getUserMediaDOM(index + 26); // Return DOM container 
 
         mediaContainer.appendChild(UserMediaDOM);
         mediasElt.push(UserMediaDOM);

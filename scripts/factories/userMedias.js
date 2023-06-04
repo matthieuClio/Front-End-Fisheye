@@ -9,20 +9,22 @@ function userMediasFactory(data, allMediasId, mediaImage, mediaVideo, mediaTitle
         const spanText = document.createElement( 'span' );
         const spanContainer = document.createElement( 'span' );
         const spanNumber = document.createElement( 'span' );
-        const i = document.createElement( 'i' );
+        const spanLike = document.createElement( 'span' );
 
         figure.setAttribute("class", "media-container__figure");
         figcaption.setAttribute("class", "media-container__figure__figcaption");
         spanText.setAttribute("class", "span-text"); // Class added for select the element with JavaScript on photographer.js
-        i.setAttribute("class", "fa-solid fa-heart media-container__figure__figcaption__icon cursor-pointer");
+        spanText.setAttribute("tabindex", index);
+        spanLike.setAttribute("class", "fa-solid fa-heart media-container__figure__figcaption__icon cursor-pointer");
+        spanLike.setAttribute("tabindex", index);
         spanNumber.setAttribute("class", "span-number"); // Class added for select the element with JavaScript on photographer.js
 
         spanText.textContent = title;
         spanNumber.textContent = likes;
         
         // Associated icon functions for each icon DOM element
-        i.addEventListener("click", () => {
-            iconAddLike();
+        spanLike.addEventListener("click", () => {
+            iconAddLike(spanNumber);
         });
 
         // Media is a video
@@ -68,7 +70,7 @@ function userMediasFactory(data, allMediasId, mediaImage, mediaVideo, mediaTitle
         figcaption.appendChild(spanText);
         figcaption.appendChild(spanContainer);
         spanContainer.appendChild(spanNumber);
-        spanContainer.appendChild(i);
+        spanContainer.appendChild(spanLike);
         
         return figure;
     }
