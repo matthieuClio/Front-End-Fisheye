@@ -15,8 +15,6 @@ async function getPhotographers (id) {
     const apiInternal = await response.json() // response contain photographers and media object
     const photographers = apiInternal.photographers // apiInternal.photographers reference to photographers object
     const media = apiInternal.media // apiInternal.media reference to media object
-    console.log('Test API') // Test API - Can be delete
-    console.log(apiInternal) // Test API - Can be delete
 
     // Get specific data of photographer
     let count = 0
@@ -28,13 +26,9 @@ async function getPhotographers (id) {
 
     // Get specific photographer data
     while (count < dataLength && !findPhotographer) {
-        console.log('Nb Photographer')
-
         if (photographers[count].id == idUser) {
             photographersData = photographers[count]
             findPhotographer = true
-
-            console.log('photographer found : ' + findPhotographer)
         }
         count++
     }
@@ -77,7 +71,6 @@ async function displayInformationsMedia (mediasData) {
         mediaTitle.push(element.title)
         mediaLikesAll = mediaLikesAll + element.likes
     })
-    console.log(mediaId)
 
     // Verify if likeContainer is already initialize (with a number) for not display a second time
     likeNumber = parseInt(likeContainer.textContent)
@@ -149,7 +142,6 @@ async function sortInformations (allMediasElt, mediasData) {
         mediasData.sort((a, b) => b.likes - a.likes)
         // Display media again
         allMediasElt = await displayInformationsMedia(mediasData)
-        console.log(mediasData)
     }
 
     async function sortByDate () {
@@ -161,7 +153,6 @@ async function sortInformations (allMediasElt, mediasData) {
         })
         // Display again
         allMediasElt = await displayInformationsMedia(mediasData)
-        console.log(mediasData)
     }
 
     async function sortByName () {
@@ -171,7 +162,6 @@ async function sortInformations (allMediasElt, mediasData) {
         mediasData.sort((a, b) => a.title.localeCompare(b.title))
         // Display again
         allMediasElt = await displayInformationsMedia(mediasData)
-        console.log(mediasData)
     }
 }
 

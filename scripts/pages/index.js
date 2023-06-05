@@ -24,7 +24,6 @@ async function getPhotographers () {
     const response = await fetch('./data/photographers.json')
     const apiInternal = await response.json() // response contain photographers and media object
     const photographers = apiInternal.photographers // apiInternal.photographers relative to photographers object
-    console.log(apiInternal)
 
     // et bien retourner le tableau photographers seulement une fois récupéré
     // return ({ photographers: [...photographers] })

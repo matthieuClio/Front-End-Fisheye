@@ -4,7 +4,6 @@ function userProfileFactory (data) {
     const photographerHeaderPhoto = document.querySelector('.photograph-header__photo__container')
     const pricingContainer = document.getElementById('pricing')
     const contactModal = document.querySelector('.modal span')
-    console.log(data)
 
     function getUserProfileDOM () {
         const h1Header = document.createElement('h1')

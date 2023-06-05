@@ -35,13 +35,11 @@ function photographerFactory (data) {
 
         div.addEventListener('click', () => {
             window.location = `photographer.html?${id}`
-            console.log(id)
         })
 
         div.addEventListener('keydown', (event) => {
             if (event.key == 'Enter') {
                 window.location = `photographer.html?${id}`
-                console.log(id)
             }
         })
 

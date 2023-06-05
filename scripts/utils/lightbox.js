@@ -6,9 +6,6 @@ function openLightbox (image, video, title, mediaId) {
     const folderPath = './assets/Photos/PhotographerMedia/'
     const lightboxContainerElt = document.querySelector('.lightbox-background__container')
 
-    // Debug informations display
-    console.log(mediaId + ' ' + image + ' ' + video + ' ' + title)
-
     // Display the lightbox with the medias data
     lightboxBackgroundElt.style.display = 'flex'
     lightboxFigcaptionElt.textContent = title
@@ -115,7 +112,6 @@ function switchMediaLightxbox (mediaId, allMediasId, mediaImage, mediaVideo, med
             lightboxIndex = LightboxLength
             changeImageVideo()
         }
-        console.log(lightboxIndex)
     }
 
     function rightChevron () {
@@ -126,7 +122,6 @@ function switchMediaLightxbox (mediaId, allMediasId, mediaImage, mediaVideo, med
             lightboxIndex = 0
             changeImageVideo()
         }
-        console.log(lightboxIndex)
     };
 
     // Display Image or video

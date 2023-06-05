@@ -118,7 +118,6 @@ header {
   padding: 0 50px 0 50px;
 }
 .photograph-header__photograph-info {
-  border: 2px solid black;
   width: 100%;
 }
 .photograph-header__photograph-info__name {
@@ -137,13 +136,11 @@ header {
 }
 .photograph-header__button {
   text-align: center;
-  border: 2px solid green;
   width: 100%;
 }
 .photograph-header__photo {
   display: flex;
   justify-content: end;
-  border: 2px solid green;
   width: 100%;
   height: 200px;
 }
@@ -151,7 +148,6 @@ header {
   margin: 0;
   padding: 0;
   top: 0;
-  border: 2px solid blue;
   width: 200px;
   border-radius: 100%;
   overflow: hidden;
@@ -172,7 +168,6 @@ header {
   border: none;
   background-color: #901C1C;
   border-radius: 5px;
-  cursor: pointer;
 }
 
 .contact_button_hover:hover {
@@ -187,7 +182,6 @@ header {
 .order-by {
   display: flex;
   position: relative;
-  border: 2px solid black;
 }
 .order-by__ul {
   z-index: 2;
@@ -207,7 +201,7 @@ header {
 }
 .order-by__ul__li {
   padding: 10px;
-  background-color: green;
+  background-color: transparent;
   border: none;
   color: white;
 }
@@ -228,7 +222,6 @@ header {
 
 /* Photograph media */
 .media-container {
-  background-color: orange;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -236,7 +229,6 @@ header {
   margin-bottom: 50px;
 }
 .media-container__figure {
-  border: 2px solid blue;
   display: flex;
   margin: 0;
   margin-bottom: 20px;
@@ -251,12 +243,10 @@ header {
   border-radius: 3px;
 }
 .media-container__figure__video {
-  border: 2px solid red;
   height: 300px;
   object-fit: cover;
 }
 .media-container__figure__figcaption {
-  border: 2px solid purple;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -297,7 +287,6 @@ header {
   height: 100%;
 }
 .lightbox-background__container {
-  border: 4px solid purple;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -305,9 +294,9 @@ header {
   width: 100%;
   background-color: white;
   color: #901C1C;
+  border: none;
 }
 .lightbox-background__container__icon-left {
-  border: 2px solid blue;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -319,14 +308,12 @@ header {
   flex-direction: column;
 }
 .lightbox-background__container__figure__image {
-  border: 2px solid orange;
   display: none;
   width: 700px;
   height: 500px;
   object-fit: cover;
 }
 .lightbox-background__container__figure__video {
-  border: 2px solid orange;
   display: none;
   width: 700px;
   height: 500px;
@@ -334,11 +321,9 @@ header {
 }
 .lightbox-background__container__figure__caption {
   padding-top: 10px;
-  border: 2px solid green;
 }
 .lightbox-background__container__icon {
   position: relative;
-  border: 2px solid blue;
   display: flex;
   justify-content: flex-start;
   align-items: center;
