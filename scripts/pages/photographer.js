@@ -110,10 +110,6 @@ async function sortInformations(allMediasElt, mediasData) {
     // Delete all media DOM
     async function deleteMedias() {
         mediaContainerElt.innerHTML = "";
-
-        // allMediasElt.forEach((element) => {
-        //     element.remove();
-        // });
     }
 
     // Sort event

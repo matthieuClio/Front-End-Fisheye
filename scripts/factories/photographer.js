@@ -9,34 +9,36 @@ function photographerFactory(data) {
         const h2 = document.createElement( 'h2' );
         const h3 = document.createElement( 'h3' );
         const p = document.createElement( 'p' );
+        const span = document.createElement( 'span' );
         const div = document.createElement( 'div' );
-        const divSecondary = document.createElement( 'div' );
 
+        img.setAttribute("alt", name);
         img.setAttribute("src", picture);
         img.setAttribute("id", id);
-        div.setAttribute("class", "div_price");
-        divSecondary.setAttribute("tabindex", index);
+        span.setAttribute("class", "div_price");
+        div.setAttribute("tabindex", index);
         h3.setAttribute("tabindex", index + 1);
+        h2.setAttribute("class", "cursor-pointer");
 
         h2.textContent = name;
         h3.textContent = `${city}, ${country}`;
         p.textContent = tagline;
-        div.textContent = `${price}€/jour`;
+        span.textContent = `${price}€/jour`;
 
-        article.appendChild(divSecondary);
-        divSecondary.appendChild(figure);
+        article.appendChild(div);
+        div.appendChild(figure);
         figure.appendChild(img);
-        divSecondary.appendChild(h2);
+        div.appendChild(h2);
         article.appendChild(h3);
         article.appendChild(p);
-        p.appendChild(div);
+        p.appendChild(span);
 
-        article.addEventListener("click", () => {
+        div.addEventListener("click", () => {
             window.location = `photographer.html?${id}`;
             console.log(id);
         });
 
-        article.addEventListener("keydown", (event) => {
+        div.addEventListener("keydown", (event) => {
             if(event.key == "Enter") {
                 window.location = `photographer.html?${id}`;
                 console.log(id);

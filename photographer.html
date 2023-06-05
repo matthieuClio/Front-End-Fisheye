@@ -106,16 +106,16 @@
     
     <!-- Modal -->
     <div id="contact_modal">
-			<div class="modal" tabindex="7">
+			<dialog class="modal" tabindex="7" aria-labelledby="heading2">
 				<header>
-          <h2 tabindex="8">Contactez-moi 
+          <h2 tabindex="8" id="heading2">Contactez-moi 
             <span>
               <!-- content generate by javaScript -->
             </span>
           </h2>
-          <figure>
+          <button>
             <img src="assets/icons/close.svg" alt="Image fermeture du modal" id="close" tabindex="18">
-          </figure>
+          </button>
         </header>
 
 				<form id="contactForm">
@@ -125,13 +125,13 @@
             <label for="inputName" tabindex="11">Nom</label>
 						<input type="text" id="inputName" tabindex="12">
             <label for="inputEmail" tabindex="13">Email</label>
-						<input type="text" id="inputEmail" tabindex="14">
+						<input type="email" id="inputEmail" tabindex="14">
             <label for="inputMessage" tabindex="15">Votre message</label>
             <textarea id="inputMessage" tabindex="16"></textarea>
 					</div>
           <button class="contact_button" tabindex="17">Envoyer</button>
 				</form>
-			</div>
+			</dialog>
 		</div>
 
     <script src="/scripts/utils/iconPopularity.js"></script>

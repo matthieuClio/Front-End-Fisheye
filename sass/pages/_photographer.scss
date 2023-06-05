@@ -282,10 +282,11 @@
     justify-content: space-between;
     padding: 35px;
     margin: auto;
-    background-color: #DB8876;
-    width: 400px;
-    border-radius: 5px;
     margin-bottom: 50px;
+    width: 400px;
+    background-color: #DB8876;
+    border: none;
+    border-radius: 5px;
 }
 
 .modal header {
@@ -294,6 +295,11 @@
     width: 100%;
     height: auto;
     align-items: start;
+}
+
+.modal header button {
+    border: none;
+    background-color: transparent;
 }
 
 .modal header img {
