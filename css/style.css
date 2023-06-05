@@ -175,6 +175,15 @@ header {
   cursor: pointer;
 }
 
+.contact_button_hover:hover {
+  background-color: #DB8876;
+  color: black;
+}
+.contact_button_hover:focus {
+  background-color: #DB8876;
+  color: black;
+}
+
 .order-by {
   display: flex;
   position: relative;

@@ -24,7 +24,7 @@
         </div>
 
         <div class="photograph-header__button">
-          <button class="contact_button" id="open" tabindex="22">Contactez-moi</button>
+          <button class="contact_button contact_button_hover" id="open" tabindex="22">Contactez-moi</button>
         </div>
 
         <div class="photograph-header__photo">
@@ -81,7 +81,7 @@
     
     <!-- Lightbox modal -->
     <div class="lightbox-background" id="lightbox-background">
-      <div class="lightbox-background__container" aria-label="image closeup view" tabindex="1">
+      <dialog class="lightbox-background__container" aria-label="image closeup view" tabindex="1">
         <span class=" lightbox-background__container__icon-left">
           <a class="fa-solid fa-chevron-left cursor-pointer" id="chevron-left-icon" tabindex="4"></a>
         </span>
@@ -101,7 +101,7 @@
           <a class="fa-solid fa-chevron-right cursor-pointer" id="chevron-right-icon" tabindex="5"></a>
           <button class="fa-solid fa-xmark lightbox-background__container__icon__close cursor-pointer" id="close-lightbox" tabindex="6"></button>
         </div>
-      </div>
+      </dialog>
     </div>
     
     <!-- Modal -->
@@ -113,8 +113,8 @@
               <!-- content generate by javaScript -->
             </span>
           </h2>
-          <button>
-            <img src="assets/icons/close.svg" alt="Image fermeture du modal" id="close" tabindex="18">
+          <button id="close" tabindex="18">
+            <img src="assets/icons/close.svg" alt="Image fermeture du modal">
           </button>
         </header>
 

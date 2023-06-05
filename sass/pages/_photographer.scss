@@ -73,6 +73,17 @@
     cursor: pointer;
 }
 
+.contact_button_hover {
+    &:hover {
+        background-color: $tertiary;
+        color: black;
+    }
+    &:focus {
+        background-color: $tertiary;
+        color: black;
+    }
+}
+
 .order-by {
     display: flex;
     position: relative;

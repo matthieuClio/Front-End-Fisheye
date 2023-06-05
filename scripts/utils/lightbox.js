@@ -4,6 +4,7 @@ function openLightbox(image, video, title, mediaId) {
     const lightboxVideoElt = document.getElementById("lightbox-video");
     const lightboxFigcaptionElt = document.getElementById("lightbox-figcaption");
     const folderPath = "./assets/Photos/PhotographerMedia/";
+    const lightboxContainerElt = document.querySelector(".lightbox-background__container");
 
     // Debug informations display 
     console.log(mediaId + ' ' + image + ' ' + video + ' ' + title);
@@ -16,9 +17,11 @@ function openLightbox(image, video, title, mediaId) {
     if(image == undefined) {
         lightboxVideoElt.style.display = "block";
         lightboxVideoElt.src = folderPath + video;
+        lightboxContainerElt.focus();
     } else {
         lightboxImageElt.style.display = "block";
         lightboxImageElt.src = folderPath + image;
+        lightboxContainerElt.focus();
     }
 }
 
@@ -36,7 +39,7 @@ function closeLightbox() {
         lightboxVideoElt.style.display = "none";
     });
 
-    // Enter Key
+    // "Enter" Key
     closeLightboxIconElt.addEventListener("keydown", (event) => {
         if(event.key == "Enter") {
             lightboxBackgroundElt.style.display = "none";
@@ -45,7 +48,7 @@ function closeLightbox() {
         }
     });
 
-    // Escape key
+    // "Escape" key
     lightboxContainerElt.addEventListener("keydown", (event) => {
         if(event.key == "Escape") {
             lightboxBackgroundElt.style.display = "none";
@@ -144,9 +147,4 @@ function switchMediaLightxbox(mediaId, allMediasId, mediaImage, mediaVideo, medi
             lightboxVideoElt.style.display = "block";
         }
     }
-
-    // console.log(allMediasId); // Debug 
-    // console.log(LightboxLength); // Debug 
-    // console.log(lightboxIndex); // Debug
-    // console.log('switchMediaLightxbox');
 }

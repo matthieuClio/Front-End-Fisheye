@@ -1,10 +1,12 @@
 function displayModal() {
     const modal = document.getElementById("contact_modal");
+    const modalForm = document.querySelector(".modal");
     const openElement = document.getElementById("open");
 
     // Open modal
     openElement.addEventListener("click", () => {
         modal.style.display = "block";
+        modalForm.focus();
     });
 }
 
