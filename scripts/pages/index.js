@@ -1,5 +1,5 @@
-async function getPhotographers() {
-    // Ceci est un exemple de données pour avoir un affichage de photographes de test dès le démarrage du projet, 
+async function getPhotographers () {
+    // Ceci est un exemple de données pour avoir un affichage de photographes de test dès le démarrage du projet,
     // mais il sera à remplacer avec une requête sur le fichier JSON en utilisant "fetch".
     // let photographers = [
     //     {
@@ -21,33 +21,33 @@ async function getPhotographers() {
     //         "portrait": "account.png"
     //     },
     // ]
-    const response = await fetch('./data/photographers.json');
-    const apiInternal = await response.json(); // response contain photographers and media object
-    const photographers = apiInternal.photographers; // apiInternal.photographers relative to photographers object
-    console.log(apiInternal);
-    
+    const response = await fetch('./data/photographers.json')
+    const apiInternal = await response.json() // response contain photographers and media object
+    const photographers = apiInternal.photographers // apiInternal.photographers relative to photographers object
+    console.log(apiInternal)
+
     // et bien retourner le tableau photographers seulement une fois récupéré
     // return ({ photographers: [...photographers] })
     return ({ photographers })
 }
 
-async function displayData(photographers) {
-    const photographersSection = document.querySelector(".photographer_section");
+async function displayData (photographers) {
+    const photographersSection = document.querySelector('.photographer_section')
 
     photographers.forEach((photographer, index) => {
-        const photographerModel = photographerFactory(photographer);
-        const userCardDOM = photographerModel.getUserCardDOM(index + 3);
+        const photographerModel = photographerFactory(photographer)
+        const userCardDOM = photographerModel.getUserCardDOM(index + 3)
 
-        photographersSection.appendChild(userCardDOM);
-    });
+        photographersSection.appendChild(userCardDOM)
+    })
 };
 
-async function init() {
+async function init () {
     // Récupère les datas des photographes
-    const { photographers }  = await getPhotographers();
+    const { photographers } = await getPhotographers()
 
     // Show photographers datas
-    displayData(photographers);
+    displayData(photographers)
 };
 
-init();
+init()
