@@ -11,10 +11,28 @@ function sortDisplaylist() {
         sortByDownIcon.classList.add("display-none");
     });
 
+    sortByDownIcon.addEventListener("keydown", (event) => {
+        if(event.key == "Enter") {
+            sortByDateIcon.classList.remove("display-none");
+            orderByTitle.classList.remove("display-none");
+            sortByUpIcon.classList.remove("display-none");
+            sortByDownIcon.classList.add("display-none");
+        }
+    });
+
     sortByUpIcon.addEventListener("click", () => {
         sortByDateIcon.classList.add("display-none");
         sortByUpIcon.classList.add("display-none");
         orderByTitle.classList.add("display-none");
         sortByDownIcon.classList.remove("display-none");
+    });
+
+    sortByUpIcon.addEventListener("keydown", (event) => {
+        if(event.key == "Enter") {
+            sortByDateIcon.classList.add("display-none");
+            sortByUpIcon.classList.add("display-none");
+            orderByTitle.classList.add("display-none");
+            sortByDownIcon.classList.remove("display-none");
+        }
     });
 }

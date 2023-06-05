@@ -10,12 +10,20 @@ function displayModal() {
 
 function closeModal() {
     const modal = document.getElementById("contact_modal");
+    const modalForm = document.querySelector(".modal");
     const closeElement = document.getElementById("close");
 
-    // Close modal
+    // Close modal click on icon
     closeElement.addEventListener("click", () => {
         modal.style.display = "none";
     });
+
+    // Close modal escape key
+    modalForm.addEventListener("keydown", (event) => {
+        if(event.key == "Escape") {
+            modal.style.display = "none";
+        }
+    })
 }
 
 function sendData() {

@@ -118,12 +118,34 @@ async function sortInformations(allMediasElt, mediasData) {
 
     // Sort event
     // ..........
+
+    // Click
     // Sort by popularity
-    orderByPopularityElt.addEventListener("click", sortByPopularity); 
+    orderByPopularityElt.addEventListener("click", sortByPopularity);
     // Sort by date
     orderByDateElt.addEventListener("click", sortByDate);
     // Sort by name
     orderByTitleElt.addEventListener("click", sortByName);
+
+    // Keydown
+    // Sort by popularity
+    orderByPopularityElt.addEventListener("keydown", (event) => {
+        if(event.key == "Enter") {
+            sortByPopularity();
+        }
+    });
+    // Sort by date
+    orderByDateElt.addEventListener("keydown", (event) => {
+        if(event.key == "Enter") {
+            sortByDate();
+        }
+    });
+    // Sort by name
+    orderByTitleElt.addEventListener("keydown", (event) => {
+        if(event.key == "Enter") {
+            sortByName();
+        }
+    });
     
     // Sort functions
     // .............

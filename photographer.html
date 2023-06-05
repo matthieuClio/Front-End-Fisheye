@@ -11,7 +11,9 @@
   </head>
   <body>
     <header tabindex="19">
-      <img src="assets/images/logo.png" class="logo" alt="Logo du site">
+      <a href="index.html">
+        <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page">
+      </a>
     </header>
 
     <main id="main">
@@ -34,25 +36,39 @@
 
       <!-- Order by -->
       <div class="order-by margin-right-and-left margin-bottom-text">
-        <label class="font-weight-bold" tabindex="24">
+        <label for="order-by-popularity" class="font-weight-bold" tabindex="24">
           Trier par :
         </label>
 
-        <div class="order-by__ul" tabindex="26">
-          <span class="fa-solid  fa-chevron-down order-by__ul__icon" id="chevron-down-icon"></span>
-          <span class="fa-solid fa-chevron-up order-by__ul__icon display-none" id="chevron-up-icon"></span>
+        <div class="order-by__ul">
+          <button class="order-by__ul__li order-by__ul__li__popularity cursor-pointer" id="order-by-popularity" tabindex="26">
+            Popularité
+          </button>
 
-          <div class="order-by__ul__li order-by__ul__li__popularity" id="order-by-popularity">
+          <span class="fa-solid  fa-chevron-down order-by__ul__icon cursor-pointer" role="button" aria-haspopup="listbox" aria-expanded id="chevron-down-icon" tabindex="26"></span>
+          <span class="fa-solid fa-chevron-up order-by__ul__icon cursor-pointer display-none" id="chevron-up-icon" tabindex="26"></span>
+
+          <button class="order-by__ul__li order-by__ul__li__date cursor-pointer display-none" id="order-by-date" tabindex="26">
+            Date
+          </button>
+
+          <button class="order-by__ul__li order-by__ul__li__titre cursor-pointer display-none" id="order-by-title" tabindex="26">
+            Titre
+          </button>
+
+          <!-- <div class="order-by__ul__li order-by__ul__li__popularity" id="order-by-popularity" tabindex="26">
             Popularité
           </div>
+          <span class="fa-solid  fa-chevron-down order-by__ul__icon" id="chevron-down-icon" tabindex="26"></span>
+          <span class="fa-solid fa-chevron-up order-by__ul__icon display-none" id="chevron-up-icon" tabindex="26"></span>
 
-          <div class="order-by__ul__li order-by__ul__li__date display-none" id="order-by-date">
+          <div class="order-by__ul__li order-by__ul__li__date display-none" id="order-by-date" tabindex="26">
             Date
           </div>
 
-          <div class="order-by__ul__li order-by__ul__li__titre display-none" id="order-by-title">
+          <div class="order-by__ul__li order-by__ul__li__titre display-none" id="order-by-title" tabindex="26">
             Titre
-          </div>
+          </div> -->
         </div>
       </div>
 

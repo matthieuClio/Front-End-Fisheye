@@ -23,19 +23,40 @@ function openLightbox(image, video, title, mediaId) {
 }
 
 function closeLightbox() {
+    const lightboxContainerElt = document.querySelector(".lightbox-background__container");
     const lightboxBackgroundElt = document.getElementById("lightbox-background");
     const lightboxImageElt = document.getElementById("lightbox-image");
     const lightboxVideoElt = document.getElementById("lightbox-video");
     const closeLightboxIconElt = document.getElementById("close-lightbox");
 
+    // Click
     closeLightboxIconElt.addEventListener("click", ()=> {
         lightboxBackgroundElt.style.display = "none";
         lightboxImageElt.style.display = "none";
         lightboxVideoElt.style.display = "none";
     });
+
+    // Enter Key
+    closeLightboxIconElt.addEventListener("keydown", (event) => {
+        if(event.key == "Enter") {
+            lightboxBackgroundElt.style.display = "none";
+            lightboxImageElt.style.display = "none";
+            lightboxVideoElt.style.display = "none";
+        }
+    });
+
+    // Escape key
+    lightboxContainerElt.addEventListener("keydown", (event) => {
+        if(event.key == "Escape") {
+            lightboxBackgroundElt.style.display = "none";
+            lightboxImageElt.style.display = "none";
+            lightboxVideoElt.style.display = "none";
+        }
+    });
 }
 
-function switchMediaLightxbox(image, video, title, mediaId, allMediasId, mediaImage, mediaVideo, mediaTitle) {
+function switchMediaLightxbox(mediaId, allMediasId, mediaImage, mediaVideo, mediaTitle) {
+    const lightboxContainerElt = document.querySelector(".lightbox-background__container");
     const lightboxImageElt = document.getElementById("lightbox-image");
     const lightboxVideoElt = document.getElementById("lightbox-video");
     const chevronLeftElt = document.getElementById("chevron-left-icon");
@@ -55,10 +76,33 @@ function switchMediaLightxbox(image, video, title, mediaId, allMediasId, mediaIm
     chevronRightElt.parentNode.replaceChild(chevronRightCloneElt, chevronRightElt);
 
     // Events
-    chevronLeftCloneElt.addEventListener("click", leftChevron);
-    chevronRightCloneElt.addEventListener("click", rightChevron);
+    // .....
 
-    // chevronLeftElt.removeEventListener("click", test1, true);
+    // Arrow icon
+    chevronLeftCloneElt.addEventListener("click", leftChevron);
+    chevronLeftCloneElt.addEventListener("keydown", (event) => {
+        if(event.key == "Enter") {
+            leftChevron();
+        }
+    });
+    chevronRightCloneElt.addEventListener("click", rightChevron);
+    chevronRightCloneElt.addEventListener("keydown", (event) => {
+        if(event.key == "Enter") {
+            rightChevron();
+        }
+    });
+
+    // Media container
+    lightboxContainerElt.addEventListener("keydown", (event) => {
+        if(event.key == "ArrowLeft") {
+            leftChevron();
+        }
+    });
+    lightboxContainerElt.addEventListener("keydown", (event) => {
+        if(event.key == "ArrowRight") {
+            rightChevron();
+        }
+    });
 
     function leftChevron() {
         if(lightboxIndex > 0 ) {

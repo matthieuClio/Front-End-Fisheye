@@ -181,6 +181,8 @@ header {
 }
 .order-by__ul {
   z-index: 2;
+  display: flex;
+  flex-direction: column;
   position: absolute;
   left: 80px;
   padding: 8px;
@@ -191,12 +193,13 @@ header {
   border: none;
   background-color: #901C1C;
   border-radius: 3px;
-  cursor: pointer;
   list-style: none;
 }
 .order-by__ul__li {
   padding: 10px;
   background-color: green;
+  border: none;
+  color: white;
 }
 .order-by__ul__li__popularity {
   margin-right: 20px;
@@ -233,7 +236,6 @@ header {
   flex-direction: column;
 }
 .media-container__figure__image {
-  border: 2px solid green;
   height: 300px;
   object-fit: cover;
   border-radius: 3px;

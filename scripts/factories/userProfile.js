@@ -22,6 +22,7 @@ function userProfileFactory(data) {
         pHeader.setAttribute("class", "photograph-header__photograph-info__paragraph");
         imgHeader.setAttribute("src", `assets/Photos/PhotographersId/${portrait}`);
         imgHeader.setAttribute("class", "photograph-header__photo__container__image");
+        imgHeader.setAttribute("alt", "");
 
         h1Header.textContent = name;
         spanHeader.textContent = city;

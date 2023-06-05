@@ -16,6 +16,7 @@ function userMediasFactory(data, allMediasId, mediaImage, mediaVideo, mediaTitle
         spanText.setAttribute("class", "span-text"); // Class added for select the element with JavaScript on photographer.js
         spanText.setAttribute("tabindex", index);
         spanLike.setAttribute("class", "fa-solid fa-heart media-container__figure__figcaption__icon cursor-pointer");
+        spanLike.setAttribute("aria-label", "likes");
         spanLike.setAttribute("tabindex", index);
         spanNumber.setAttribute("class", "span-number"); // Class added for select the element with JavaScript on photographer.js
 
@@ -27,13 +28,19 @@ function userMediasFactory(data, allMediasId, mediaImage, mediaVideo, mediaTitle
             iconAddLike(spanNumber);
         });
 
+        spanLike.addEventListener("keydown", (event)=>  {
+            if(event.key == "Enter") {
+                iconAddLike(spanNumber);
+            }
+        });
+
         // Media is a video
         if(image == undefined) {
             const videoElt = document.createElement( 'video' );
             const sourceMP4 = document.createElement( 'source' );
 
             videoElt.setAttribute("class", "media-container__figure__video cursor-pointer");
-            videoElt.setAttribute("alt", "Vidéo de la galerie d'image");
+            videoElt.setAttribute("alt", "Lilac breasted roller, closeup view");
             videoElt.setAttribute("id", "video_id");
             videoElt.setAttribute("tabindex", index);
             videoElt.controls = false; 
@@ -47,13 +54,21 @@ function userMediasFactory(data, allMediasId, mediaImage, mediaVideo, mediaTitle
             videoElt.addEventListener("click", () => {
                 openLightbox(image, video, title, id);
                 closeLightbox();
-                switchMediaLightxbox(image, video, title, id, allMediasId, mediaImage, mediaVideo, mediaTitle);
+                switchMediaLightxbox(id, allMediasId, mediaImage, mediaVideo, mediaTitle);
+            });
+
+            videoElt.addEventListener("keydown", (event) => {
+                if(event.key == "Enter") {
+                    openLightbox(image, video, title, id);
+                    closeLightbox();
+                    switchMediaLightxbox(id, allMediasId, mediaImage, mediaVideo, mediaTitle);
+                }
             });
 
         } else { // Media is a image
             img.setAttribute("src", folderPath + image);
             img.setAttribute("class", "media-container__figure__image cursor-pointer");
-            img.setAttribute("alt", "Image de la galerie d'image");
+            img.setAttribute("alt", "Lilac breasted roller, closeup view");
             img.setAttribute("tabindex", index);
 
             figure.appendChild(img);
@@ -62,7 +77,15 @@ function userMediasFactory(data, allMediasId, mediaImage, mediaVideo, mediaTitle
             img.addEventListener("click", () => {
                 openLightbox(image, video, title, id);
                 closeLightbox();
-                switchMediaLightxbox(image, video, title, id, allMediasId, mediaImage, mediaVideo, mediaTitle);
+                switchMediaLightxbox(id, allMediasId, mediaImage, mediaVideo, mediaTitle);
+            });
+
+            img.addEventListener("keydown", (event) => {
+                if(event.key == "Enter") {
+                    openLightbox(image, video, title, id);
+                    closeLightbox();
+                    switchMediaLightxbox(id, allMediasId, mediaImage, mediaVideo, mediaTitle);
+                }
             });
         }
 
