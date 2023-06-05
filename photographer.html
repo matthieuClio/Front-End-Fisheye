@@ -55,20 +55,6 @@
           <button class="order-by__ul__li order-by__ul__li__titre cursor-pointer display-none" id="order-by-title" tabindex="26">
             Titre
           </button>
-
-          <!-- <div class="order-by__ul__li order-by__ul__li__popularity" id="order-by-popularity" tabindex="26">
-            Popularité
-          </div>
-          <span class="fa-solid  fa-chevron-down order-by__ul__icon" id="chevron-down-icon" tabindex="26"></span>
-          <span class="fa-solid fa-chevron-up order-by__ul__icon display-none" id="chevron-up-icon" tabindex="26"></span>
-
-          <div class="order-by__ul__li order-by__ul__li__date display-none" id="order-by-date" tabindex="26">
-            Date
-          </div>
-
-          <div class="order-by__ul__li order-by__ul__li__titre display-none" id="order-by-title" tabindex="26">
-            Titre
-          </div> -->
         </div>
       </div>
 
@@ -95,13 +81,13 @@
     
     <!-- Lightbox modal -->
     <div class="lightbox-background" id="lightbox-background">
-      <div class="lightbox-background__container" tabindex="1">
+      <div class="lightbox-background__container" aria-label="image closeup view" tabindex="1">
         <span class=" lightbox-background__container__icon-left">
-          <span class="fa-solid fa-chevron-left cursor-pointer" id="chevron-left-icon" tabindex="4"></span>
+          <a class="fa-solid fa-chevron-left cursor-pointer" id="chevron-left-icon" tabindex="4"></a>
         </span>
         <figure class="lightbox-background__container__figure">
           <!-- src generate by JavaScript -->
-          <img src="#" alt="Image du modal" class="lightbox-background__container__figure__image" id="lightbox-image" tabindex="2">
+          <img src="#" alt="Lilac breasted roller" class="lightbox-background__container__figure__image" id="lightbox-image" tabindex="2">
           
           <video src="#" controls class="lightbox-background__container__figure__video" id="lightbox-video">
             <!-- src generate by JavaScript -->
@@ -112,8 +98,8 @@
           </figcaption>
         </figure>
         <div class="lightbox-background__container__icon">
-          <span class="fa-solid fa-chevron-right cursor-pointer" id="chevron-right-icon" tabindex="5"></span>
-          <span class="fa-solid fa-xmark lightbox-background__container__icon__close cursor-pointer" id="close-lightbox" tabindex="6"></span>
+          <a class="fa-solid fa-chevron-right cursor-pointer" id="chevron-right-icon" tabindex="5"></a>
+          <button class="fa-solid fa-xmark lightbox-background__container__icon__close cursor-pointer" id="close-lightbox" tabindex="6"></button>
         </div>
       </div>
     </div>

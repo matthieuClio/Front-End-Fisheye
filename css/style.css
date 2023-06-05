@@ -338,7 +338,9 @@ header {
 .lightbox-background__container__icon__close {
   position: absolute;
   top: 0;
-  border: 2px solid red;
+  border: none;
+  color: #901C1C;
+  background-color: transparent;
 }
 
 #contact_modal {

@@ -253,7 +253,9 @@
             &__close {
                 position: absolute;
                 top: 0;
-                border: 2px solid red;
+                border: none;
+                color: $primary;
+                background-color: transparent;
             }
         }
     }
