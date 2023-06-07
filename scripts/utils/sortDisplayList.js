@@ -12,7 +12,7 @@ function sortDisplaylist () {
     })
 
     sortByDownIcon.addEventListener('keydown', (event) => {
-        if (event.key == 'Enter') {
+        if (event.key === 'Enter') {
             sortByDateIcon.classList.remove('display-none')
             orderByTitle.classList.remove('display-none')
             sortByUpIcon.classList.remove('display-none')
@@ -28,7 +28,7 @@ function sortDisplaylist () {
     })
 
     sortByUpIcon.addEventListener('keydown', (event) => {
-        if (event.key == 'Enter') {
+        if (event.key === 'Enter') {
             sortByDateIcon.classList.add('display-none')
             sortByUpIcon.classList.add('display-none')
             orderByTitle.classList.add('display-none')

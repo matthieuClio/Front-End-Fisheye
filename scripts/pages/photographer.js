@@ -20,13 +20,13 @@ async function getPhotographers (id) {
     let count = 0
     const dataLength = photographers.length
     let findPhotographer = false
-    const idUser = id
+    const idUser = parseInt(id)
     let photographersData
     let mediasData = []
 
     // Get specific photographer data
     while (count < dataLength && !findPhotographer) {
-        if (photographers[count].id == idUser) {
+        if (photographers[count].id === idUser) {
             photographersData = photographers[count]
             findPhotographer = true
         }
@@ -35,7 +35,7 @@ async function getPhotographers (id) {
 
     // Get specific medias data
     media.forEach(element => { // Element relative to media
-        if (idUser == element.photographerId) {
+        if (idUser === element.photographerId) {
             mediasData.push(element)
         }
     })
@@ -116,19 +116,19 @@ async function sortInformations (allMediasElt, mediasData) {
     // Keydown
     // Sort by popularity
     orderByPopularityElt.addEventListener('keydown', (event) => {
-        if (event.key == 'Enter') {
+        if (event.key === 'Enter') {
             sortByPopularity()
         }
     })
     // Sort by date
     orderByDateElt.addEventListener('keydown', (event) => {
-        if (event.key == 'Enter') {
+        if (event.key === 'Enter') {
             sortByDate()
         }
     })
     // Sort by name
     orderByTitleElt.addEventListener('keydown', (event) => {
-        if (event.key == 'Enter') {
+        if (event.key === 'Enter') {
             sortByName()
         }
     })

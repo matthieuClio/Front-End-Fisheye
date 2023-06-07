@@ -11,7 +11,7 @@ function openLightbox (image, video, title, mediaId) {
     lightboxFigcaptionElt.textContent = title
 
     // Display a video or a image
-    if (image == undefined) {
+    if (image === undefined) {
         lightboxVideoElt.style.display = 'block'
         lightboxVideoElt.src = folderPath + video
         lightboxContainerElt.focus()
@@ -38,7 +38,7 @@ function closeLightbox () {
 
     // "Enter" Key
     closeLightboxIconElt.addEventListener('keydown', (event) => {
-        if (event.key == 'Enter') {
+        if (event.key === 'Enter') {
             lightboxBackgroundElt.style.display = 'none'
             lightboxImageElt.style.display = 'none'
             lightboxVideoElt.style.display = 'none'
@@ -47,7 +47,7 @@ function closeLightbox () {
 
     // "Escape" key
     lightboxContainerElt.addEventListener('keydown', (event) => {
-        if (event.key == 'Escape') {
+        if (event.key === 'Escape') {
             lightboxBackgroundElt.style.display = 'none'
             lightboxImageElt.style.display = 'none'
             lightboxVideoElt.style.display = 'none'
@@ -81,25 +81,25 @@ function switchMediaLightxbox (mediaId, allMediasId, mediaImage, mediaVideo, med
     // Arrow icon
     chevronLeftCloneElt.addEventListener('click', leftChevron)
     chevronLeftCloneElt.addEventListener('keydown', (event) => {
-        if (event.key == 'Enter') {
+        if (event.key === 'Enter') {
             leftChevron()
         }
     })
     chevronRightCloneElt.addEventListener('click', rightChevron)
     chevronRightCloneElt.addEventListener('keydown', (event) => {
-        if (event.key == 'Enter') {
+        if (event.key === 'Enter') {
             rightChevron()
         }
     })
 
     // Media container
     lightboxContainerElt.addEventListener('keydown', (event) => {
-        if (event.key == 'ArrowLeft') {
+        if (event.key === 'ArrowLeft') {
             leftChevron()
         }
     })
     lightboxContainerElt.addEventListener('keydown', (event) => {
-        if (event.key == 'ArrowRight') {
+        if (event.key === 'ArrowRight') {
             rightChevron()
         }
     })
@@ -108,7 +108,7 @@ function switchMediaLightxbox (mediaId, allMediasId, mediaImage, mediaVideo, med
         if (lightboxIndex > 0) {
             lightboxIndex -= 1
             changeImageVideo()
-        } else if (lightboxIndex == 0) {
+        } else if (lightboxIndex === 0) {
             lightboxIndex = LightboxLength
             changeImageVideo()
         }
@@ -118,7 +118,7 @@ function switchMediaLightxbox (mediaId, allMediasId, mediaImage, mediaVideo, med
         if (lightboxIndex < LightboxLength) {
             lightboxIndex += 1
             changeImageVideo()
-        } else if (lightboxIndex == LightboxLength) {
+        } else if (lightboxIndex === LightboxLength) {
             lightboxIndex = 0
             changeImageVideo()
         }
@@ -128,11 +128,11 @@ function switchMediaLightxbox (mediaId, allMediasId, mediaImage, mediaVideo, med
     function changeImageVideo () {
         lightboxFigcaptionElt.textContent = mediaTitle[lightboxIndex]
 
-        if (mediaImage[lightboxIndex] != undefined) {
+        if (mediaImage[lightboxIndex] !== undefined) {
             lightboxImageElt.src = folderPath + mediaImage[lightboxIndex]
             lightboxImageElt.style.display = 'block'
             lightboxVideoElt.style.display = 'none'
-        } else if (mediaImage[lightboxIndex] == undefined) {
+        } else if (mediaImage[lightboxIndex] === undefined) {
             lightboxVideoElt.src = folderPath + mediaVideo[lightboxIndex]
             lightboxImageElt.style.display = 'none'
             lightboxVideoElt.style.display = 'block'

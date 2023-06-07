@@ -29,13 +29,13 @@ function userMediasFactory (data, allMediasId, mediaImage, mediaVideo, mediaTitl
         })
 
         spanLike.addEventListener('keydown', (event) => {
-            if (event.key == 'Enter') {
+            if (event.key === 'Enter') {
                 iconAddLike(spanNumber)
             }
         })
 
         // Media is a video
-        if (image == undefined) {
+        if (image === undefined) {
             const videoElt = document.createElement('video')
             const sourceMP4 = document.createElement('source')
 
@@ -58,7 +58,7 @@ function userMediasFactory (data, allMediasId, mediaImage, mediaVideo, mediaTitl
             })
 
             videoElt.addEventListener('keydown', (event) => {
-                if (event.key == 'Enter') {
+                if (event.key === 'Enter') {
                     openLightbox(image, video, title, id)
                     closeLightbox()
                     switchMediaLightxbox(id, allMediasId, mediaImage, mediaVideo, mediaTitle)
@@ -80,7 +80,7 @@ function userMediasFactory (data, allMediasId, mediaImage, mediaVideo, mediaTitl
             })
 
             img.addEventListener('keydown', (event) => {
-                if (event.key == 'Enter') {
+                if (event.key === 'Enter') {
                     openLightbox(image, video, title, id)
                     closeLightbox()
                     switchMediaLightxbox(id, allMediasId, mediaImage, mediaVideo, mediaTitle)
