@@ -181,7 +181,6 @@ async function init () {
 
     // Get photographer datas
     const photographerAndMediaDatas = await getPhotographers(idUser)
-
     // Display photographers personal informations
     await displayInformationsPhotographer(photographerAndMediaDatas.photographersData)
 
